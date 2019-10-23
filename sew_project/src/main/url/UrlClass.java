@@ -38,14 +38,11 @@ public class UrlClass implements Url {
         if (url != null) {
             if (url.contains("//") && url.contains("?")) {
                 String[] withoutHttps = url.split("\\?")[0].split("//");
-                String[] path = withoutHttps[1].split("/", 2);
-                retString = "/" + path[1];
+                retString = withoutHttps[1].split("/", 2)[1];
             } else if (url.contains("//")) {
-                String[] path = url.split("//")[1].split("/", 2);
-                retString = "/" + path[1];
+                retString = url.split("//")[1].split("/", 2)[1];
             } else if (url.contains("?")) {
-                String[] path = url.split("\\?")[0].split("/", 2);
-                retString = "/" + path[1];
+                retString = url.split("\\?")[0].split("/", 2)[1];
             } else {
                 retString = url;
             }
@@ -95,8 +92,10 @@ public class UrlClass implements Url {
     @Override
     public String[] getSegments() {
         String[] parts = url.split("/", 4);
-        String url = parts[parts.length - 1];
-        String[] segments = url.split("/");
+
+        String rUrl = parts[parts.length - 1];
+        String[] segments = rUrl.split("/");
+
         if (segments[segments.length - 1].contains("?")) {
             segments = Arrays.copyOf(segments, segments.length - 1);
         }
@@ -112,18 +111,18 @@ public class UrlClass implements Url {
     @Override
     public String getFileName() {
 
-        String[] et;
+        String[] name;
         String ext = url.substring(url.lastIndexOf('/'));
 
         if (ext.contains(".")) {
             if (ext.contains("?")) {
                 String file = ext.substring(0, ext.indexOf("?"));
-                et = file.split("/");
+                name = file.split("/");
             } else {
-                et = ext.split("/");
+                name = ext.split("/");
             }
 
-            retString = et[1];
+            retString = name[1];
         }
 
         return retString;
@@ -138,7 +137,7 @@ public class UrlClass implements Url {
     public String getExtension() {
 
         if (url.substring(url.lastIndexOf('/')).indexOf(".") > 0 ) {
-            String ext = url.substring(url.lastIndexOf('.'));
+            String ext = url.substring(url.lastIndexOf('.') + 1);
             retString = ext.contains("?") ? ext.substring(0, ext.indexOf('?')) : ext;
         }
 
