@@ -57,6 +57,7 @@ public class UrlClass implements Url {
      */
     @Override
     public Map<String, String> getParameter() {
+
         Map<String, String> params = new HashMap<>();
         String parameters = url.substring(url.lastIndexOf("?") + 1);
 
@@ -67,6 +68,7 @@ public class UrlClass implements Url {
             }
         }
         return params;
+
     }
 
     /**
