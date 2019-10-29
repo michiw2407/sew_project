@@ -1,4 +1,4 @@
-package main.request;
+package main.response;
 
 import at.technikum.Interfaces.Request;
 import main.url.UrlClass;
@@ -6,14 +6,11 @@ import main.url.UrlClass;
 import java.io.InputStream;
 import java.util.Map;
 
-public class RequestClass implements Request {
+public class ResponseClass implements Request {
+
 
     public static void main(String[] args) {
         System.out.println();
-    }
-
-    public RequestClass() {
-
     }
 
     /**
