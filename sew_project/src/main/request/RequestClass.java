@@ -3,17 +3,47 @@ package main.request;
 import at.technikum.Interfaces.Request;
 import main.url.UrlClass;
 
+import java.io.BufferedReader;
+import java.io.IOException;
 import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.util.Map;
 
 public class RequestClass implements Request {
+
+    private BufferedReader in;
+    private String[] parameters;
+
+    public enum HttpMethod {
+        GET, POST, PUT, DELETE
+    }
 
     public static void main(String[] args) {
         System.out.println();
     }
 
-    public RequestClass() {
+    public RequestClass(InputStream in) throws Exception {
+        this.in = new BufferedReader(new InputStreamReader(in));
+        try {
+            setParameters();
+        } catch (IOException e) {
+            throw new Exception(e);
+        }
+    }
 
+    private void setParameters() throws IOException {
+        final String requestLine = in.readLine();
+        this.parameters = requestLine.split("[ ]");
+    }
+
+    public void readMessage() throws IOException {
+        if (in != null) {
+            String raw;
+
+            while ((raw = in.readLine()) != null) {
+                System.out.println(raw);
+            }
+        }
     }
 
     /**
@@ -22,6 +52,14 @@ public class RequestClass implements Request {
      */
     @Override
     public boolean isValid() {
+        if (parameters.length >= 3 && parameters[1].startsWith("/")) {
+            for (HttpMethod h : HttpMethod.values()) {
+                if (h.name().equals(parameters[0].toUpperCase())) {
+                    return true;
+                }
+            }
+        }
+
         return false;
     }
 
@@ -30,7 +68,7 @@ public class RequestClass implements Request {
      */
     @Override
     public String getMethod() {
-        return null;
+        return this.isValid() ? parameters[0] : null;
     }
 
     /**
@@ -38,7 +76,7 @@ public class RequestClass implements Request {
      */
     @Override
     public UrlClass getUrl() {
-        return null;
+        return this.isValid() ? new UrlClass(parameters[1]) : null;
     }
 
     /**
@@ -110,4 +148,8 @@ public class RequestClass implements Request {
     public byte[] getContentBytes() {
         return new byte[0];
     }
+
+
+
+
 }

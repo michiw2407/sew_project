@@ -1,110 +1,152 @@
 package main.response;
 
 import at.technikum.Interfaces.Request;
+import at.technikum.Interfaces.Response;
 import main.url.UrlClass;
 
 import java.io.InputStream;
+import java.io.OutputStream;
+import java.util.HashMap;
 import java.util.Map;
 
-public class ResponseClass implements Request {
 
+public class ResponseClass implements Response {
 
-    public static void main(String[] args) {
-        System.out.println();
+    private String serverHeader;
+    private String cont;
+    private String contentType;
+    private int contentLength;
+    private Map<String, String> headers = new HashMap<>();
+    private StatusCode statusCode;
+
+    public ResponseClass() {
     }
 
     /**
-     * @return Returns true if the request is valid. A request is valid, if
-     * method and url could be parsed. A header is not necessary.
-     */
-    @Override
-    public boolean isValid() {
-        return false;
-    }
-
-    /**
-     * @return Returns the request method in UPPERCASE. get -> GET
-     */
-    @Override
-    public String getMethod() {
-        return null;
-    }
-
-    /**
-     * @return Returns a URL object of the request. Never returns null.
-     */
-    @Override
-    public UrlClass getUrl() {
-        return null;
-    }
-
-    /**
-     * @return Returns the request header. Never returns null. All keys must be
-     * lower case.
+     * @return Returns a writable map of the response headers. Never returns
+     * null.
      */
     @Override
     public Map<String, String> getHeaders() {
-        return null;
+        return headers;
     }
 
     /**
-     * @return Returns the number of header or 0, if no header where found.
-     */
-    @Override
-    public int getHeaderCount() {
-        return 0;
-    }
-
-    /**
-     * @return Returns the user agent from the request header
-     */
-    @Override
-    public String getUserAgent() {
-        return null;
-    }
-
-    /**
-     * @return Returns the parsed content length request header. Never returns
-     * null.
+     * @return Returns the content length or 0 if no content is set yet.
      */
     @Override
     public int getContentLength() {
-        return 0;
+        return contentLength;
     }
 
     /**
-     * @return Returns the parsed content type request header. Never returns
-     * null.
+     * @return Gets the content type of the response.
      */
     @Override
     public String getContentType() {
-        return null;
+        return contentType;
     }
 
     /**
-     * @return Returns the request content (body) stream or null if there is no
-     * content stream.
+     * @param contentType Sets the content type of the response.
+     * @throws IllegalStateException A specialized implementation may throw a
+     *                               InvalidOperationException when the content type is set by the
+     *                               implementation.
      */
     @Override
-    public InputStream getContentStream() {
-        return null;
+    public void setContentType(String contentType) {
+        headers.put("Content-Type", contentType);
     }
 
     /**
-     * @return Returns the request content (body) as string or null if there is
-     * no content.
+     * @return Gets the current status code. An Exceptions is thrown, if no status code was set.
      */
     @Override
-    public String getContentString() {
-        return null;
+    public int getStatusCode() {
+        if (statusCode == null)
+            throw new IllegalArgumentException("null");
+        else
+            return statusCode.getStatusCode();
+
     }
 
     /**
-     * @return Returns the request content (body) as byte[] or null if there is
-     * no content.
+     * @param status Sets the current status code.
      */
     @Override
-    public byte[] getContentBytes() {
-        return new byte[0];
+    public void setStatusCode(int status) {
+        statusCode = StatusCode.valueOf(Integer.toString(status));
+    }
+
+    /**
+     * @return Returns the status code as string. (200 OK)
+     */
+    @Override
+    public String getStatus() {
+        if (statusCode == null)
+            throw new IllegalArgumentException("null");
+        else
+            return "(" + statusCode.getStatusCode() + " " + statusCode.getDescription() + ")";
+    }
+
+    /**
+     * Adds or replaces a response header in the headers map
+     *
+     * @param header
+     * @param value
+     */
+    @Override
+    public void addHeader(String header, String value) {
+        //TODO
+    }
+
+    /**
+     * @return Returns the Server response header. Defaults to "BIF-SWE1-Server".
+     */
+    @Override
+    public String getServerHeader() {
+        return serverHeader;
+    }
+
+    /**
+     * Sets the Server response header.
+     *
+     * @param server
+     */
+    @Override
+    public void setServerHeader(String server) {
+        //TODO
+    }
+
+    /**
+     * @param content Sets a string content. The content will be encoded in UTF-8.
+     */
+    @Override
+    public void setContent(String content) {
+        //TODO
+    }
+
+    /**
+     * @param content Sets a byte[] as content.
+     */
+    @Override
+    public void setContent(byte[] content) {
+        cont = new String(content);
+    }
+
+    /**
+     * @param stream Sets the stream as content.
+     */
+    @Override
+    public void setContent(InputStream stream) {
+        //TODO
+    }
+
+    /**
+     * @param network Sends the response to the network stream.
+     */
+    @Override
+    public void send(OutputStream network) {
+        //TODO
     }
 }

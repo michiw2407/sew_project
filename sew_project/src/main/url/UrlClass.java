@@ -18,7 +18,7 @@ public class UrlClass implements Url {
     /**
      * Constructor
      */
-    UrlClass(String url) {
+    public UrlClass(String url) {
         this.url = url;
     }
 

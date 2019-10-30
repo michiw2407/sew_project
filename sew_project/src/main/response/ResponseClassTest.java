@@ -7,27 +7,7 @@ import static org.junit.jupiter.api.Assertions.*;
 class ResponseClassTest {
 
     @Test
-    void isValid() {
-    }
-
-    @Test
-    void getMethod() {
-    }
-
-    @Test
-    void getUrl() {
-    }
-
-    @Test
     void getHeaders() {
-    }
-
-    @Test
-    void getHeaderCount() {
-    }
-
-    @Test
-    void getUserAgent() {
     }
 
     @Test
@@ -39,14 +19,46 @@ class ResponseClassTest {
     }
 
     @Test
-    void getContentStream() {
+    void setContentType() {
     }
 
     @Test
-    void getContentString() {
+    void getStatusCode() {
     }
 
     @Test
-    void getContentBytes() {
+    void setStatusCode() {
+    }
+
+    @Test
+    void getStatus() {
+    }
+
+    @Test
+    void addHeader() {
+    }
+
+    @Test
+    void getServerHeader() {
+    }
+
+    @Test
+    void setServerHeader() {
+    }
+
+    @Test
+    void setContent() {
+    }
+
+    @Test
+    void testSetContent() {
+    }
+
+    @Test
+    void testSetContent1() {
+    }
+
+    @Test
+    void send() {
     }
 }
