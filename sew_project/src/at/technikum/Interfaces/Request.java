@@ -3,6 +3,7 @@ package at.technikum.Interfaces;
 
 import main.url.UrlClass;
 
+import java.io.IOException;
 import java.io.InputStream;
 import java.util.Map;
 
@@ -61,11 +62,11 @@ public interface Request {
      * @return Returns the request content (body) as string or null if there is
      * no content.
      */
-    String getContentString();
+    String getContentString() throws IOException;
 
     /**
      * @return Returns the request content (body) as byte[] or null if there is
      * no content.
      */
-    byte[] getContentBytes();
+    byte[] getContentBytes() throws IOException;
 }

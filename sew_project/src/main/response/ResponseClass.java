@@ -13,12 +13,16 @@ import java.util.Map;
 
 public class ResponseClass implements Response {
 
-    private String serverHeader;
     private byte[] cont;
+
     private String contentType;
+    private int statusCode;
+    private String serverHeader;
+
+    private String status;
+
     private int contentLength;
     private Map<String, String> headers = new HashMap<>();
-    private StatusCode statusCode;
 
     public ResponseClass() {
         headers.put("Server", "BIF-SWE1-Server");
@@ -65,10 +69,10 @@ public class ResponseClass implements Response {
      */
     @Override
     public int getStatusCode() {
-        if (statusCode == null)
+        if (statusCode == 0)
             throw new IllegalArgumentException("null");
         else
-            return statusCode.getStatusCode();
+            return statusCode;
 
     }
 
@@ -77,7 +81,18 @@ public class ResponseClass implements Response {
      */
     @Override
     public void setStatusCode(int status) {
-        statusCode = StatusCode.valueOf(Integer.toString(status));
+        statusCode = status;
+        switch (status) {
+            case 200:
+                this.status = "200 OK";
+                break;
+            case 404:
+                this.status = "404 Not Found";
+                break;
+            case 500:
+                this.status = "500 Internal Server Error";
+                break;
+        }
     }
 
     /**
@@ -85,10 +100,10 @@ public class ResponseClass implements Response {
      */
     @Override
     public String getStatus() {
-        if (statusCode == null)
+        if (statusCode == 0)
             throw new IllegalArgumentException("null");
         else
-            return "(" + statusCode.getStatusCode() + " " + statusCode.getDescription() + ")";
+            return "(" + status + ")";
     }
 
     /**
@@ -126,6 +141,7 @@ public class ResponseClass implements Response {
     @Override
     public void setContent(String content) {
         cont = content.getBytes();
+        contentLength = cont.length;
     }
 
     /**
@@ -134,6 +150,7 @@ public class ResponseClass implements Response {
     @Override
     public void setContent(byte[] content) {
         cont = content;
+        contentLength = cont.length;
     }
 
     /**
@@ -143,8 +160,8 @@ public class ResponseClass implements Response {
     public void setContent(InputStream stream) {
         try {
             cont = stream.readAllBytes();
+            contentLength = cont.length;
         } catch (IOException e) {
-
             System.out.println(e.getMessage());
             e.printStackTrace();
         }
@@ -157,14 +174,14 @@ public class ResponseClass implements Response {
     public void send(OutputStream network) {
 
         try {
-            if (statusCode == null || cont.length == 0) {
+            if (status == null || cont.length == 0) {
                 throw new IllegalStateException("No status code or content set.");
             }
 
             StringBuilder respHeaders = new StringBuilder();
 
             respHeaders.append("HTTP/1.1 ").append(getStatus()).append("\n");
-            respHeaders.append("Content-Length").append(getContentLength()).append("\n");
+            respHeaders.append("Content-Length: ").append(getContentLength()).append("\n");
 
             for (Map.Entry<String, String> entry : headers.entrySet()) {
                 respHeaders.append(entry.getKey()).append(": ").append(entry.getValue()).append("\n");

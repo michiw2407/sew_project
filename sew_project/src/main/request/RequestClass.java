@@ -2,47 +2,56 @@ package main.request;
 
 import at.technikum.Interfaces.Request;
 import main.url.UrlClass;
+import org.apache.commons.io.*;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
+import java.io.*;
+import java.nio.Buffer;
+import java.nio.charset.StandardCharsets;
+import java.util.HashMap;
 import java.util.Map;
+
 
 public class RequestClass implements Request {
 
-    private BufferedReader in;
-    private String[] parameters;
+
+    private InputStream inpStream;
+    private UrlClass url = new UrlClass("/");
+    private Map<String, String> headers = new HashMap<>();
+
+    private String method;
+    private String httpVersion;
 
     public enum HttpMethod {
         GET, POST, PUT, DELETE
     }
 
-    public static void main(String[] args) {
-        System.out.println();
+    public RequestClass(InputStream inputStream) throws IOException {
+        inpStream = inputStream;
+        resolveInputStream();
     }
 
-    public RequestClass(InputStream in) throws Exception {
-        this.in = new BufferedReader(new InputStreamReader(in));
-        try {
-            setParameters();
-        } catch (IOException e) {
-            throw new Exception(e);
+    private void resolveInputStream() throws IOException {
+        BufferedReader reader = new BufferedReader(new InputStreamReader(inpStream, StandardCharsets.UTF_8));
+
+        System.out.println(inpStream);
+        String methodLine = reader.readLine();
+
+        if(methodLine==null) {
+            throw new IllegalStateException();
         }
-    }
 
-    private void setParameters() throws IOException {
-        final String requestLine = in.readLine();
-        this.parameters = requestLine.split("[ ]");
-    }
+        // GET /url HTTP/1.1
+        String[] segment = methodLine.split(" ", 3);
 
-    public void readMessage() throws IOException {
-        if (in != null) {
-            String raw;
+        method = segment[0].toUpperCase();
+        url = new UrlClass(segment[1]);
+        httpVersion = segment[2];
 
-            while ((raw = in.readLine()) != null) {
-                System.out.println(raw);
-            }
+        String line;
+
+        while ((line = reader.readLine()) != null && !line.isEmpty()) {
+            String[] headerSplit = line.split(": ", 2);
+            headers.put(headerSplit[0].toLowerCase(), headerSplit[1]);
         }
     }
 
@@ -52,9 +61,9 @@ public class RequestClass implements Request {
      */
     @Override
     public boolean isValid() {
-        if (parameters.length >= 3 && parameters[1].startsWith("/")) {
+        if (method.length() >= 3) {
             for (HttpMethod h : HttpMethod.values()) {
-                if (h.name().equals(parameters[0].toUpperCase())) {
+                if (h.name().equals(method)) {
                     return true;
                 }
             }
@@ -68,7 +77,7 @@ public class RequestClass implements Request {
      */
     @Override
     public String getMethod() {
-        return this.isValid() ? parameters[0] : null;
+        return this.isValid() ? method : null;
     }
 
     /**
@@ -76,7 +85,7 @@ public class RequestClass implements Request {
      */
     @Override
     public UrlClass getUrl() {
-        return this.isValid() ? new UrlClass(parameters[1]) : null;
+        return url;
     }
 
     /**
@@ -85,7 +94,7 @@ public class RequestClass implements Request {
      */
     @Override
     public Map<String, String> getHeaders() {
-        return null;
+        return headers;
     }
 
     /**
@@ -93,7 +102,7 @@ public class RequestClass implements Request {
      */
     @Override
     public int getHeaderCount() {
-        return 0;
+        return headers.size();
     }
 
     /**
@@ -101,7 +110,7 @@ public class RequestClass implements Request {
      */
     @Override
     public String getUserAgent() {
-        return null;
+        return headers.getOrDefault("User-Agent", null);
     }
 
     /**
@@ -110,7 +119,7 @@ public class RequestClass implements Request {
      */
     @Override
     public int getContentLength() {
-        return 0;
+        return Integer.parseInt(headers.getOrDefault("Content-Length", "0"));
     }
 
     /**
@@ -119,7 +128,7 @@ public class RequestClass implements Request {
      */
     @Override
     public String getContentType() {
-        return null;
+        return headers.getOrDefault("Content-Type", "");
     }
 
     /**
@@ -128,7 +137,7 @@ public class RequestClass implements Request {
      */
     @Override
     public InputStream getContentStream() {
-        return null;
+        return inpStream;
     }
 
     /**
@@ -136,8 +145,8 @@ public class RequestClass implements Request {
      * no content.
      */
     @Override
-    public String getContentString() {
-        return null;
+    public String getContentString() throws IOException {
+        return inpStream != null ? IOUtils.toString(inpStream, StandardCharsets.UTF_8) : null;
     }
 
     /**
@@ -145,11 +154,7 @@ public class RequestClass implements Request {
      * no content.
      */
     @Override
-    public byte[] getContentBytes() {
-        return new byte[0];
+    public byte[] getContentBytes() throws IOException {
+        return IOUtils.toByteArray(inpStream);
     }
-
-
-
-
 }
