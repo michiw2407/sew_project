@@ -4,6 +4,7 @@ import at.technikum.Interfaces.Request;
 import at.technikum.Interfaces.Response;
 import main.url.UrlClass;
 
+import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 import java.util.HashMap;
@@ -13,13 +14,14 @@ import java.util.Map;
 public class ResponseClass implements Response {
 
     private String serverHeader;
-    private String cont;
+    private byte[] cont;
     private String contentType;
     private int contentLength;
     private Map<String, String> headers = new HashMap<>();
     private StatusCode statusCode;
 
     public ResponseClass() {
+        headers.put("Server", "BIF-SWE1-Server");
     }
 
     /**
@@ -97,7 +99,7 @@ public class ResponseClass implements Response {
      */
     @Override
     public void addHeader(String header, String value) {
-        //TODO
+        headers.put(header, value);
     }
 
     /**
@@ -115,7 +117,7 @@ public class ResponseClass implements Response {
      */
     @Override
     public void setServerHeader(String server) {
-        //TODO
+        headers.put("Server", server);
     }
 
     /**
@@ -123,7 +125,7 @@ public class ResponseClass implements Response {
      */
     @Override
     public void setContent(String content) {
-        //TODO
+        cont = content.getBytes();
     }
 
     /**
@@ -131,7 +133,7 @@ public class ResponseClass implements Response {
      */
     @Override
     public void setContent(byte[] content) {
-        cont = new String(content);
+        cont = content;
     }
 
     /**
@@ -139,7 +141,13 @@ public class ResponseClass implements Response {
      */
     @Override
     public void setContent(InputStream stream) {
-        //TODO
+        try {
+            cont = stream.readAllBytes();
+        } catch (IOException e) {
+
+            System.out.println(e.getMessage());
+            e.printStackTrace();
+        }
     }
 
     /**
@@ -147,6 +155,27 @@ public class ResponseClass implements Response {
      */
     @Override
     public void send(OutputStream network) {
-        //TODO
+
+        try {
+            if (statusCode == null || cont.length == 0) {
+                throw new IllegalStateException("No status code or content set.");
+            }
+
+            StringBuilder respHeaders = new StringBuilder();
+
+            respHeaders.append("HTTP/1.1 ").append(getStatus()).append("\n");
+            respHeaders.append("Content-Length").append(getContentLength()).append("\n");
+
+            for (Map.Entry<String, String> entry : headers.entrySet()) {
+                respHeaders.append(entry.getKey()).append(": ").append(entry.getValue()).append("\n");
+            }
+
+            respHeaders.append("\n");
+
+            network.write(respHeaders.toString().getBytes());
+            network.write(cont);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 }
