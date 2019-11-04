@@ -2,63 +2,52 @@ package main.response;
 
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.*;
+import java.util.Map;
+
+import static org.junit.Assert.assertEquals;
 
 class ResponseClassTest {
 
+    private ResponseClass resp = new ResponseClass();
+
     @Test
     void getHeaders() {
+        assertEquals(Map.of("Server", "BIF-SWE1-Server"), resp.getHeaders());
     }
 
     @Test
     void getContentLength() {
+        String content = "hello world";
+        resp.setContent(content);
+        assertEquals(content.length(), resp.getContentLength());
     }
 
     @Test
     void getContentType() {
-    }
-
-    @Test
-    void setContentType() {
+        String contentType = "html";
+        resp.setContentType(contentType);
+        assertEquals(contentType, resp.getContentType());
     }
 
     @Test
     void getStatusCode() {
+        resp.setStatusCode(200);
+        assertEquals(200, resp.getStatusCode());
     }
 
-    @Test
-    void setStatusCode() {
-    }
 
     @Test
     void getStatus() {
+        resp.setStatusCode(200);
+        assertEquals("(200 OK)", resp.getStatus());
     }
 
-    @Test
-    void addHeader() {
-    }
 
     @Test
     void getServerHeader() {
+        String header = "TestHeader";
+        resp.setServerHeader(header);
+        assertEquals(Map.of("Server", header), resp.getHeaders());
     }
 
-    @Test
-    void setServerHeader() {
-    }
-
-    @Test
-    void setContent() {
-    }
-
-    @Test
-    void testSetContent() {
-    }
-
-    @Test
-    void testSetContent1() {
-    }
-
-    @Test
-    void send() {
-    }
 }

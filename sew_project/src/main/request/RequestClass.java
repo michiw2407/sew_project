@@ -33,7 +33,7 @@ public class RequestClass implements Request {
     private void resolveInputStream() throws IOException {
         BufferedReader reader = new BufferedReader(new InputStreamReader(inpStream, StandardCharsets.UTF_8));
 
-        System.out.println(inpStream);
+        //System.out.println(inpStream);
         String methodLine = reader.readLine();
 
         if(methodLine==null) {
@@ -110,7 +110,7 @@ public class RequestClass implements Request {
      */
     @Override
     public String getUserAgent() {
-        return headers.getOrDefault("User-Agent", null);
+        return headers.getOrDefault("user-agent", null);
     }
 
     /**
@@ -119,7 +119,7 @@ public class RequestClass implements Request {
      */
     @Override
     public int getContentLength() {
-        return Integer.parseInt(headers.getOrDefault("Content-Length", "0"));
+        return Integer.parseInt(headers.getOrDefault("content-length", "0"));
     }
 
     /**
@@ -128,7 +128,7 @@ public class RequestClass implements Request {
      */
     @Override
     public String getContentType() {
-        return headers.getOrDefault("Content-Type", "");
+        return headers.getOrDefault("content-type", "");
     }
 
     /**
@@ -146,6 +146,7 @@ public class RequestClass implements Request {
      */
     @Override
     public String getContentString() throws IOException {
+        //System.out.print(IOUtils.toString(inpStream, StandardCharsets.UTF_8));
         return inpStream != null ? IOUtils.toString(inpStream, StandardCharsets.UTF_8) : null;
     }
 

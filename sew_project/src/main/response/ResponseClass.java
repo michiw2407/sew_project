@@ -62,6 +62,7 @@ public class ResponseClass implements Response {
     @Override
     public void setContentType(String contentType) {
         headers.put("Content-Type", contentType);
+        this.contentType = contentType;
     }
 
     /**
