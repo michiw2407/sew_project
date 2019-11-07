@@ -1,5 +1,6 @@
-package main.url;
+package tests;
 
+import main.url.UrlClass;
 import org.junit.Assert;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
@@ -60,7 +61,4 @@ class UrlClassTest {
         url = new UrlClass("https://testurl.com");
         assertEquals("", url.getFragment());
     }
-
-
-
 }

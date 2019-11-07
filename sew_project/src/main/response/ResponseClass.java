@@ -1,8 +1,6 @@
 package main.response;
 
-import at.technikum.Interfaces.Request;
-import at.technikum.Interfaces.Response;
-import main.url.UrlClass;
+import interfaces.Response;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -82,7 +80,6 @@ public class ResponseClass implements Response {
      */
     @Override
     public void setStatusCode(int status) {
-        statusCode = status;
         switch (status) {
             case 200:
                 this.status = "200 OK";
@@ -93,7 +90,11 @@ public class ResponseClass implements Response {
             case 500:
                 this.status = "500 Internal Server Error";
                 break;
+            default:
+                this.status = "400 Bad Request";
         }
+
+        statusCode = status;
     }
 
     /**
@@ -173,7 +174,6 @@ public class ResponseClass implements Response {
      */
     @Override
     public void send(OutputStream network) {
-
         try {
             if (status == null || cont.length == 0) {
                 throw new IllegalStateException("No status code or content set.");
@@ -192,6 +192,8 @@ public class ResponseClass implements Response {
 
             network.write(respHeaders.toString().getBytes());
             network.write(cont);
+
+            network.flush();
         } catch (IOException e) {
             e.printStackTrace();
         }

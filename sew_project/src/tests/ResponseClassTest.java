@@ -1,5 +1,6 @@
-package main.response;
+package tests;
 
+import main.response.ResponseClass;
 import org.junit.jupiter.api.Test;
 
 import java.util.Map;
@@ -35,13 +36,11 @@ class ResponseClassTest {
         assertEquals(200, resp.getStatusCode());
     }
 
-
     @Test
     void getStatus() {
         resp.setStatusCode(200);
         assertEquals("(200 OK)", resp.getStatus());
     }
-
 
     @Test
     void getServerHeader() {
@@ -49,5 +48,4 @@ class ResponseClassTest {
         resp.setServerHeader(header);
         assertEquals(Map.of("Server", header), resp.getHeaders());
     }
-
 }

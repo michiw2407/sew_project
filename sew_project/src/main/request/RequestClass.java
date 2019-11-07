@@ -1,11 +1,13 @@
 package main.request;
 
-import at.technikum.Interfaces.Request;
+import interfaces.Request;
 import main.url.UrlClass;
-import org.apache.commons.io.*;
+import org.apache.commons.io.IOUtils;
 
-import java.io.*;
-import java.nio.Buffer;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.nio.charset.StandardCharsets;
 import java.util.HashMap;
 import java.util.Map;

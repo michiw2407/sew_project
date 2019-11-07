@@ -1,4 +1,4 @@
-package at.technikum.Interfaces;
+package interfaces;
 
 import java.util.Map;
 

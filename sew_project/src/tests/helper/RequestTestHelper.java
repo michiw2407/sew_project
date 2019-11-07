@@ -1,4 +1,4 @@
-package main.request;
+package tests.helper;
 
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
@@ -7,13 +7,13 @@ import java.io.OutputStreamWriter;
 import java.io.PrintWriter;
 import java.nio.charset.StandardCharsets;
 
-class RequestTestHelper {
+public class RequestTestHelper {
 
-    static InputStream getValidRequestStream(String url) throws Exception {
+    public static InputStream getValidRequestStream(String url) throws Exception {
         return getValidRequestStream(url, "GET", "localhost", null, null);
     }
 
-    static InputStream getValidRequestStream(String url, String method, String body) throws Exception {
+    public static InputStream getValidRequestStream(String url, String method, String body) throws Exception {
         return getValidRequestStream(url, method, "localhost", null, body);
     }
 

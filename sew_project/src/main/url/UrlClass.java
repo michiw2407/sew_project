@@ -1,6 +1,6 @@
 package main.url;
 
-import at.technikum.Interfaces.Url;
+import interfaces.Url;
 
 import java.util.Arrays;
 import java.util.HashMap;

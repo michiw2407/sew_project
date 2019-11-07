@@ -1,5 +1,8 @@
-package main.request;
+package tests;
 
+import tests.helper.RequestTestHelper;
+
+import main.request.RequestClass;
 import org.apache.commons.io.IOUtils;
 import org.hamcrest.collection.IsMapContaining;
 import org.junit.jupiter.api.Test;

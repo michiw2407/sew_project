@@ -18,16 +18,19 @@ public class ServerRun implements Runnable {
     public void run() {
         try {
             RequestClass request = new RequestClass(socket.getInputStream());
+            ResponseClass response = new ResponseClass();
 
-            if (!request.isValid()) {
+            if (request.isValid()) {
+                response.setStatusCode(200);
+                response.setContent("HelloWorld");
+
+            } else {
+                response.setStatusCode(400);
+                response.setContent("Bad Request");
                 socket.close();
             }
 
-            ResponseClass response = new ResponseClass();
-            response.setStatusCode(200);
-            response.setContent("Test");
             response.send(socket.getOutputStream());
-
         } catch (IOException e) {
             e.printStackTrace();
         }
