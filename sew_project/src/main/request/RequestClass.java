@@ -35,7 +35,6 @@ public class RequestClass implements Request {
     private void resolveInputStream() throws IOException {
         BufferedReader reader = new BufferedReader(new InputStreamReader(inpStream, StandardCharsets.UTF_8));
 
-        //System.out.println(inpStream);
         String methodLine = reader.readLine();
 
         if(methodLine==null) {
@@ -148,7 +147,6 @@ public class RequestClass implements Request {
      */
     @Override
     public String getContentString() throws IOException {
-        //System.out.print(IOUtils.toString(inpStream, StandardCharsets.UTF_8));
         return inpStream != null ? IOUtils.toString(inpStream, StandardCharsets.UTF_8) : null;
     }
 
