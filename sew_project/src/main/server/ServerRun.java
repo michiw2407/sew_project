@@ -3,15 +3,20 @@ package main.server;
 import main.request.RequestClass;
 import main.response.ResponseClass;
 
+import java.io.FileReader;
 import java.io.IOException;
 import java.net.Socket;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 
 public class ServerRun implements Runnable {
 
     private Socket socket;
+    private String fileName;
 
-    ServerRun(Socket socket) {
+    ServerRun(Socket socket, String fileName) {
         this.socket = socket;
+        this.fileName = fileName;
     }
 
     @Override
@@ -22,7 +27,7 @@ public class ServerRun implements Runnable {
 
             if (request.isValid()) {
                 response.setStatusCode(200);
-                response.setContent("HelloWorld");
+                response.setContent(new String(Files.readAllBytes(Paths.get(fileName))));
 
             } else {
                 response.setStatusCode(400);
