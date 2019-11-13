@@ -1,6 +1,4 @@
 package main;
-
-
 import main.server.Server;
 
 import java.io.IOException;
