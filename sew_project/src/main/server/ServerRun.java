@@ -27,7 +27,7 @@ public class ServerRun implements Runnable {
 
             if (request.isValid()) {
                 response.setStatusCode(200);
-                response.setContent(new String(Files.readAllBytes(Paths.get(fileName))));
+                response.setContent(Files.readAllBytes(Paths.get(fileName)));
             } else {
                 response.setStatusCode(400);
                 response.setContent("Bad Request");

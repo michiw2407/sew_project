@@ -1,8 +1,8 @@
 <component name="libraryTable">
   <library name="external">
     <CLASSES>
-      <root url="jar://$PROJECT_DIR$/src/libraries/commons-io-2.4.jar!/" />
-      <root url="jar://$PROJECT_DIR$/src/libraries/hamcrest-2.2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/src/resouces/libraries/commons-io-2.4.jar!/" />
+      <root url="jar://$PROJECT_DIR$/src/resouces/libraries/hamcrest-2.2.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />

@@ -7,7 +7,7 @@ public class Main {
     public static void main(String[] args) {
 
         Server server;
-        String inputFile = System.getProperty("user.dir") + "/src/main/server/input.txt";
+        String inputFile = System.getProperty("user.dir") + "/src/resources/files/image.png";
         int port = 8080;
 
         try {
