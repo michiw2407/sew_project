@@ -17,7 +17,7 @@ public class RequestClass implements Request {
 
 
     private InputStream inpStream;
-    private UrlClass url = new UrlClass("/");
+    public UrlClass url = new UrlClass("/");
     private Map<String, String> headers = new HashMap<>();
 
     private String method;

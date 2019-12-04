@@ -13,9 +13,10 @@ public class ResponseClass implements Response {
 
     private byte[] cont;
 
-    private String contentType;
-    private int statusCode;
     private String serverHeader;
+
+    public String contentType;
+    public int statusCode;
 
     private String status;
 

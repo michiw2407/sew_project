@@ -42,15 +42,17 @@ public class PluginManagerClass implements PluginManager {
      */
     @Override
     public void add(String plugin) throws InstantiationException, IllegalAccessException, ClassNotFoundException {
+        Class<?> classInstance = Class.forName(plugin);
 
-        PluginClass pl = new PluginClass(plugin);
-
-        try {
-            if (!lPlug.contains(pl)) {
-                lPlug.add(pl);
+        if (PluginClass.class.isAssignableFrom(classInstance)) {
+            try {
+                PluginClass plInstance = (PluginClass) classInstance.getDeclaredConstructor().newInstance();
+                lPlug.add(plInstance);
+            } catch (Exception e) {
+                throw new ClassNotFoundException("Class not found");
             }
-        } catch (Exception e) {
-            e.printStackTrace();
+        } else {
+            throw new ClassNotFoundException("Class not found");
         }
     }
 
