@@ -1,18 +1,17 @@
 package main.plugin;
 
 import interfaces.Plugin;
-import interfaces.Request;
 import interfaces.Response;
-
-import java.util.Random;
+import main.request.RequestClass;
 
 public class PluginClass implements Plugin {
 
     String pluginName;
 
-    PluginClass(String pluginName) {
+    public PluginClass(String pluginName) {
         this.pluginName = pluginName;
     }
+
 
     /**
      * Returns a score between 0 and 1 to indicate that the plugin is willing to
@@ -23,9 +22,11 @@ public class PluginClass implements Plugin {
      * @return A score between 0 and 1
      */
     @Override
-    public float canHandle(Request req) {
-        //rand number between 0-1
-        return new Random().nextInt(2);
+    public float canHandle(RequestClass req) {
+
+
+
+        return 0;
     }
 
     /**
@@ -35,7 +36,7 @@ public class PluginClass implements Plugin {
      * @return A new response object.
      */
     @Override
-    public Response handle(Request req) {
+    public Response handle(RequestClass req) {
         return null;
     }
 }

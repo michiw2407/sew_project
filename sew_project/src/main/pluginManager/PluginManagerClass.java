@@ -1,14 +1,14 @@
 package main.pluginManager;
 
-import interfaces.Plugin;
 import interfaces.PluginManager;
+import main.plugin.PluginClass;
 
 import java.util.List;
 
 public class PluginManagerClass implements PluginManager {
 
 
-    List<Plugin> lPlug;
+    List<PluginClass> lPlug;
 
     /**
      * Returns a list of all plugins. Never returns null.
@@ -17,7 +17,7 @@ public class PluginManagerClass implements PluginManager {
      * @return
      */
     @Override
-    public List<Plugin> getPlugins() {
+    public List<PluginClass> getPlugins() {
         return lPlug;
     }
 
@@ -27,7 +27,7 @@ public class PluginManagerClass implements PluginManager {
      * @param plugin
      */
     @Override
-    public void add(Plugin plugin) {
+    public void add(PluginClass plugin) {
         lPlug.add(plugin);
     }
 
@@ -42,14 +42,16 @@ public class PluginManagerClass implements PluginManager {
      */
     @Override
     public void add(String plugin) throws InstantiationException, IllegalAccessException, ClassNotFoundException {
-//            try {
-//
-//                if(pl != null)
-//                    lPlug.add(pl);
-//
-//            } catch (MalformedURLException e) {
-//                e.printStackTrace();
-//            }
+
+        PluginClass pl = new PluginClass(plugin);
+
+        try {
+            if (!lPlug.contains(pl)) {
+                lPlug.add(pl);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     /**

@@ -1,6 +1,7 @@
 package interfaces;
 
-import java.lang.Iterable;
+import main.plugin.PluginClass;
+
 import java.util.List;
 
 public interface PluginManager {
@@ -9,14 +10,14 @@ public interface PluginManager {
      * TODO: Refactor to List<Plugin>, Enumeration is deprecated
      * @return
      */
-    List<Plugin> getPlugins();
+    List<PluginClass> getPlugins();
 
 
     /**
      * Adds a new plugin. If the plugin was already added, nothing will happen.
      * @param plugin
      */
-    void add(Plugin plugin);
+    void add(PluginClass plugin);
 
     /**
      * Adds a new plugin by class name. If the plugin was already added, nothing will happen.
