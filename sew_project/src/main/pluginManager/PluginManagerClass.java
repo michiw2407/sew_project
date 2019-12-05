@@ -3,14 +3,21 @@ package main.pluginManager;
 import interfaces.Plugin;
 import interfaces.PluginManager;
 import main.plugin.PluginClass;
+import main.pluginManager.plugins.NaviPlugin;
 import main.pluginManager.plugins.TemperaturePlugin;
 
+import java.util.LinkedList;
 import java.util.List;
 
 public class PluginManagerClass implements PluginManager {
 
 
-    List<PluginClass> lPlug;
+    private List<Plugin> lPlug = new LinkedList<>();
+
+    public PluginManagerClass() {
+        lPlug.add(new NaviPlugin());
+        lPlug.add(new TemperaturePlugin());
+    }
 
     /**
      * Returns a list of all plugins. Never returns null.
@@ -19,13 +26,13 @@ public class PluginManagerClass implements PluginManager {
      * @return
      */
     @Override
-    public List<PluginClass> getPlugins() {
+    public List<Plugin> getPlugins() {
         return lPlug;
     }
 
     public Plugin getPlugin() {
-//        return new NaviPlugin();
-        return new TemperaturePlugin();
+        return new NaviPlugin();
+//        return new TemperaturePlugin();
     }
 
     /**

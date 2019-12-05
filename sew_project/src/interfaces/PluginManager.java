@@ -10,7 +10,7 @@ public interface PluginManager {
      * TODO: Refactor to List<Plugin>, Enumeration is deprecated
      * @return
      */
-    List<PluginClass> getPlugins();
+    List<Plugin> getPlugins();
 
 
     /**
