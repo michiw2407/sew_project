@@ -1,7 +1,6 @@
 package main.pluginManager.plugins;
 
 import interfaces.Plugin;
-import interfaces.Response;
 import main.request.RequestClass;
 import main.response.ResponseClass;
 import org.w3c.dom.Document;
@@ -160,7 +159,7 @@ public class NaviPlugin implements Plugin {
      * @return A new response object.
      */
     @Override
-    public Response handle(RequestClass req) throws IOException, ParserConfigurationException, SAXException {
+    public ResponseClass handle(RequestClass req) throws IOException, ParserConfigurationException, SAXException {
         ResponseClass res = new ResponseClass();
 
         if (req.isValid()) {

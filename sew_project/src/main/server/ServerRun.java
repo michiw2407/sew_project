@@ -9,6 +9,7 @@ import org.xml.sax.SAXException;
 import javax.xml.parsers.ParserConfigurationException;
 import java.io.IOException;
 import java.net.Socket;
+import java.sql.SQLException;
 
 public class ServerRun implements Runnable {
 
@@ -24,28 +25,27 @@ public class ServerRun implements Runnable {
     public void run() {
         try {
             RequestClass request = new RequestClass(socket.getInputStream());
-            ResponseClass response = new ResponseClass();
+            ResponseClass response = null;
 
             if (request.isValid()) {
-                response.setStatusCode(200);
-//                response.setContent(Files.readAllBytes(Paths.get(fileName)));
-
                 PluginManagerClass plugManager = new PluginManagerClass();
                 System.out.println("PlugManager init");
                 Plugin plugin = plugManager.getPlugin();
                 System.out.println(plugin);
                 System.out.println(request);
                 System.out.println("gets Plugin");
-                response = (ResponseClass) plugin.handle(request);
+                response = plugin.handle(request);
                 System.out.println("sets response");
-            } else {
-                response.setStatusCode(400);
-                response.setContent("Bad Request");
+
+                if (response == null) {
+                    response = new ResponseClass();
+                    response.setStatusCode(404);
+                } else response.setStatusCode(200);
+
+                response.send(socket.getOutputStream());
                 socket.close();
             }
-
-            response.send(socket.getOutputStream());
-        } catch (IOException | ParserConfigurationException | SAXException e) {
+        } catch (IOException | ParserConfigurationException | SAXException | SQLException e) {
             e.printStackTrace();
         }
     }

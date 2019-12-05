@@ -1,7 +1,6 @@
 package main.plugin;
 
 import interfaces.Plugin;
-import interfaces.Response;
 import main.request.RequestClass;
 import main.response.ResponseClass;
 
@@ -33,7 +32,7 @@ public class PluginClass implements Plugin {
      * @return A new response object.
      */
     @Override
-    public Response handle(RequestClass req) {
+    public ResponseClass handle(RequestClass req) {
         ResponseClass resp = new ResponseClass();
 
         if (canHandle(req) > 0.0f) {

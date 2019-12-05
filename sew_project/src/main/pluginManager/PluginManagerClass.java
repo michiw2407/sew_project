@@ -3,7 +3,7 @@ package main.pluginManager;
 import interfaces.Plugin;
 import interfaces.PluginManager;
 import main.plugin.PluginClass;
-import main.pluginManager.plugins.NaviPlugin;
+import main.pluginManager.plugins.TemperaturePlugin;
 
 import java.util.List;
 
@@ -24,7 +24,8 @@ public class PluginManagerClass implements PluginManager {
     }
 
     public Plugin getPlugin() {
-        return new NaviPlugin();
+//        return new NaviPlugin();
+        return new TemperaturePlugin();
     }
 
     /**

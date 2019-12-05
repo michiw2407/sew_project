@@ -1,10 +1,12 @@
 package interfaces;
 
 import main.request.RequestClass;
+import main.response.ResponseClass;
 import org.xml.sax.SAXException;
 
 import javax.xml.parsers.ParserConfigurationException;
 import java.io.IOException;
+import java.sql.SQLException;
 
 public interface Plugin {
     /**
@@ -23,5 +25,5 @@ public interface Plugin {
      * @param req
      * @return A new response object.
      */
-    Response handle(RequestClass req) throws IOException, ParserConfigurationException, SAXException;
+    ResponseClass handle(RequestClass req) throws IOException, ParserConfigurationException, SAXException, SQLException;
 }
