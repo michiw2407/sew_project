@@ -1,6 +1,10 @@
 package interfaces;
 
 import main.request.RequestClass;
+import org.xml.sax.SAXException;
+
+import javax.xml.parsers.ParserConfigurationException;
+import java.io.IOException;
 
 public interface Plugin {
     /**
@@ -11,7 +15,7 @@ public interface Plugin {
      * @param req
      * @return A score between 0 and 1
      */
-    float canHandle(RequestClass req);
+    float canHandle(RequestClass req) throws Exception;
 
     /**
      * Called by the server when the plugin should handle the request.
@@ -19,5 +23,5 @@ public interface Plugin {
      * @param req
      * @return A new response object.
      */
-    Response handle(RequestClass req);
+    Response handle(RequestClass req) throws IOException, ParserConfigurationException, SAXException;
 }

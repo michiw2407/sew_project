@@ -16,6 +16,9 @@ public class PluginClass implements Plugin {
      */
     @Override
     public float canHandle(RequestClass req) {
+
+        System.out.println("CANHANDLE");
+        System.out.println(req);
         float score = 0.1f;
         if (req.isValid() && req.url.getRawUrl().equals("/test"))
             score = 1.0f;

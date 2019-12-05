@@ -2,12 +2,12 @@ package main.request;
 
 import interfaces.Request;
 import main.url.UrlClass;
-import org.apache.commons.io.IOUtils;
 
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.net.URLDecoder;
 import java.nio.charset.StandardCharsets;
 import java.util.HashMap;
 import java.util.Map;
@@ -23,6 +23,8 @@ public class RequestClass implements Request {
     private String method;
     private String httpVersion;
 
+    private byte[] contentBytes;
+
     public enum HttpMethod {
         GET, POST, PUT, DELETE
     }
@@ -37,7 +39,10 @@ public class RequestClass implements Request {
 
         String methodLine = reader.readLine();
 
-        if(methodLine==null) {
+        contentBytes = new byte[getContentLength()];
+        inpStream.read(contentBytes, 0, getContentLength());
+
+        if (methodLine == null) {
             throw new IllegalStateException();
         }
 
@@ -54,6 +59,7 @@ public class RequestClass implements Request {
             String[] headerSplit = line.split(": ", 2);
             headers.put(headerSplit[0].toLowerCase(), headerSplit[1]);
         }
+
     }
 
     /**
@@ -147,7 +153,7 @@ public class RequestClass implements Request {
      */
     @Override
     public String getContentString() throws IOException {
-        return inpStream != null ? IOUtils.toString(inpStream, StandardCharsets.UTF_8) : null;
+        return URLDecoder.decode(new String(contentBytes), StandardCharsets.UTF_8);
     }
 
     /**
@@ -156,6 +162,6 @@ public class RequestClass implements Request {
      */
     @Override
     public byte[] getContentBytes() throws IOException {
-        return IOUtils.toByteArray(inpStream);
+        return contentBytes;
     }
 }

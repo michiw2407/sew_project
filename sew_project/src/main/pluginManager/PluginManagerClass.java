@@ -1,7 +1,9 @@
 package main.pluginManager;
 
+import interfaces.Plugin;
 import interfaces.PluginManager;
 import main.plugin.PluginClass;
+import main.pluginManager.plugins.NaviPlugin;
 
 import java.util.List;
 
@@ -19,6 +21,10 @@ public class PluginManagerClass implements PluginManager {
     @Override
     public List<PluginClass> getPlugins() {
         return lPlug;
+    }
+
+    public Plugin getPlugin() {
+        return new NaviPlugin();
     }
 
     /**
