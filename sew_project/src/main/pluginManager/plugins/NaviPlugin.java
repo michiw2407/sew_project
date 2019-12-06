@@ -63,7 +63,11 @@ public class NaviPlugin implements Plugin {
                 System.out.println("PARSE");
                 navi_data = xmlRead();
                 System.out.println("FINISHED");
-            } else if(xml_got_parsed){
+                //xml_got_parsed gets TRUE
+            }
+
+            if(xml_got_parsed){
+                //xml_got_parsed is FALSE WHYYYY?????
                 System.out.println("SEARCHFOR");
                 StringBuilder cities = new StringBuilder();
                 if (req.getUrl().getParameter().containsKey("street")) {

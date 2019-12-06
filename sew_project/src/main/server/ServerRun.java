@@ -1,7 +1,6 @@
 package main.server;
 
 import interfaces.Plugin;
-import main.pluginManager.PluginManagerClass;
 import main.request.RequestClass;
 import main.response.ResponseClass;
 import org.xml.sax.SAXException;
@@ -28,9 +27,8 @@ public class ServerRun implements Runnable {
             ResponseClass response = null;
 
             if (request.isValid()) {
-                PluginManagerClass plugManager = new PluginManagerClass();
                 System.out.println("PlugManager init");
-                Plugin plugin = plugManager.getPlugin();
+                Plugin plugin = Server.plugManager.getPlugin();
                 System.out.println(plugin);
                 System.out.println(request);
                 System.out.println("gets Plugin");
