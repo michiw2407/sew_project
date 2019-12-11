@@ -5,6 +5,7 @@ import interfaces.PluginManager;
 import main.plugin.PluginClass;
 import main.pluginManager.plugins.NaviPlugin;
 import main.pluginManager.plugins.TemperaturePlugin;
+import main.request.RequestClass;
 
 import java.util.LinkedList;
 import java.util.List;
@@ -30,9 +31,18 @@ public class PluginManagerClass implements PluginManager {
         return lPlug;
     }
 
-    public Plugin getPlugin() {
-        return new NaviPlugin();
-//        return new TemperaturePlugin();
+    public Plugin getPlugin(RequestClass request) throws Exception {
+        float handle = 0;
+        Plugin plugin = null;
+
+        for (Plugin pl : lPlug) {
+            if (pl.canHandle(request) > handle) {
+                handle = pl.canHandle(request);
+                plugin = pl;
+            }
+        }
+
+        return plugin;
     }
 
     /**

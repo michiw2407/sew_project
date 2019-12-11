@@ -3,12 +3,8 @@ package main.server;
 import interfaces.Plugin;
 import main.request.RequestClass;
 import main.response.ResponseClass;
-import org.xml.sax.SAXException;
 
-import javax.xml.parsers.ParserConfigurationException;
-import java.io.IOException;
 import java.net.Socket;
-import java.sql.SQLException;
 
 public class ServerRun implements Runnable {
 
@@ -25,10 +21,12 @@ public class ServerRun implements Runnable {
         try {
             RequestClass request = new RequestClass(socket.getInputStream());
             ResponseClass response = null;
+            Plugin plugin = null;
 
             if (request.isValid()) {
                 System.out.println("PlugManager init");
-                Plugin plugin = Server.plugManager.getPlugin();
+                System.out.println();
+                plugin = Server.plugManager.getPlugin(request);
                 System.out.println(plugin);
                 System.out.println(request);
                 System.out.println("gets Plugin");
@@ -43,7 +41,7 @@ public class ServerRun implements Runnable {
                 response.send(socket.getOutputStream());
                 socket.close();
             }
-        } catch (IOException | ParserConfigurationException | SAXException | SQLException e) {
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }

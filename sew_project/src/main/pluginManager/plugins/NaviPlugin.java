@@ -38,10 +38,13 @@ public class NaviPlugin implements Plugin {
      * @return A score between 0 and 1
      */
     public float canHandle(RequestClass req) throws Exception {
-        if (req.getUrl().getRawUrl().startsWith("/navi"))
-            return 1f;
-        else
-            return 0;
+        if (req.isValid()) {
+            if (req.url.getRawUrl().startsWith("/navi")) {
+                System.out.println("NAVI PLUGIN VALID");
+                return 1.0f;
+            }
+        }
+        return 0.0f;
     }
 
     /**
@@ -57,17 +60,14 @@ public class NaviPlugin implements Plugin {
         System.out.println(req.getUrl().getRawUrl());
 
         if (req.getUrl().getRawUrl().startsWith("/navi")) {
-            System.out.println("XMLGOTPARSED: " + xml_got_parsed);
-
             if (!xml_got_parsed) {
-                System.out.println("PARSE");
                 navi_data = xmlRead();
+//                xml_got_parsed = true;
                 System.out.println("FINISHED");
                 //xml_got_parsed gets TRUE
             }
 
             if(xml_got_parsed){
-                //xml_got_parsed is FALSE WHYYYY?????
                 System.out.println("SEARCHFOR");
                 StringBuilder cities = new StringBuilder();
                 if (req.getUrl().getParameter().containsKey("street")) {
@@ -79,11 +79,9 @@ public class NaviPlugin implements Plugin {
                             .replaceAll("%f6", "ö")
                             .replaceAll("%fc", "ü");
 
-//					System.out.println(street);
-//					System.out.println(navi_data.get(street));
+
                     if (navi_data.containsKey(street)) {
                         set = navi_data.get(street);
-//						System.out.println(set.size());
                         for (String s : set) {
                             cities.append(
                                     s.replaceAll("ß", "&szlig")
