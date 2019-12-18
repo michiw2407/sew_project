@@ -5,6 +5,7 @@ import interfaces.PluginManager;
 import main.plugin.PluginClass;
 import main.pluginManager.plugins.NaviPlugin;
 import main.pluginManager.plugins.TemperaturePlugin;
+import main.pluginManager.plugins.ToLowerPlugin;
 import main.request.RequestClass;
 
 import java.util.LinkedList;
@@ -18,6 +19,7 @@ public class PluginManagerClass implements PluginManager {
     public PluginManagerClass() {
         lPlug.add(new NaviPlugin());
         lPlug.add(new TemperaturePlugin());
+        lPlug.add(new ToLowerPlugin());
     }
 
     /**
