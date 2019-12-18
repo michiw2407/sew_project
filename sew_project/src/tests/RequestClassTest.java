@@ -1,13 +1,12 @@
 package tests;
 
-import tests.helper.RequestTestHelper;
-
 import main.request.RequestClass;
-import org.apache.commons.io.IOUtils;
 import org.hamcrest.collection.IsMapContaining;
 import org.junit.jupiter.api.Test;
+import tests.helper.RequestTestHelper;
 
 import java.io.InputStream;
+import java.net.URLDecoder;
 import java.nio.charset.StandardCharsets;
 
 import static org.junit.Assert.*;
@@ -82,13 +81,8 @@ class RequestClassTest {
     void getContentString() throws Exception {
         InputStream inpStream = RequestTestHelper.getValidRequestStream(url, "GET", "hello world");
         requ = new RequestClass(inpStream);
-        assertEquals(IOUtils.toString(inpStream, StandardCharsets.UTF_8), requ.getContentString());
+        byte[] contentBytes = new byte[requ.getContentLength()];
+        assertEquals(URLDecoder.decode(new String(contentBytes), StandardCharsets.UTF_8), requ.getContentString());
     }
 
-    @Test
-    void getContentBytes() throws Exception {
-        InputStream inpStream = RequestTestHelper.getValidRequestStream(url, "GET", "hello world");
-        requ = new RequestClass(inpStream);
-        assertEquals(IOUtils.toByteArray(inpStream), requ.getContentBytes());
-    }
 }
