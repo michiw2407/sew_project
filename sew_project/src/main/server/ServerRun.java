@@ -6,6 +6,7 @@ import main.response.ResponseClass;
 
 import java.net.Socket;
 import java.nio.file.Files;
+import java.nio.file.NoSuchFileException;
 import java.nio.file.Paths;
 
 public class ServerRun implements Runnable {
@@ -36,9 +37,13 @@ public class ServerRun implements Runnable {
                     } else {
                         System.out.println("URL: " + request.getUrl().getRawUrl());
                         fileName+=request.getUrl().getRawUrl();
-                        response.setContent(Files.readAllBytes(Paths.get(fileName)));
+                        try {
+                            response.setContent(Files.readAllBytes(Paths.get(fileName)));
+                        } catch (NoSuchFileException e) {
+                            e.printStackTrace();
+                            response.setContent("ERROR 404");
+                        }
                     }
-
 
                 if (response == null) {
                     response = new ResponseClass();
