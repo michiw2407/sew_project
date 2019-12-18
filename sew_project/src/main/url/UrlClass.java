@@ -11,10 +11,6 @@ public class UrlClass implements Url {
     private String url;
     private String retString = "";
 
-    public static void main(String[] args) {
-        System.out.println();
-    }
-
     /**
      * Constructor
      */

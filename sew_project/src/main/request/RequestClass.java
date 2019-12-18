@@ -3,10 +3,7 @@ package main.request;
 import interfaces.Request;
 import main.url.UrlClass;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
+import java.io.*;
 import java.net.URLDecoder;
 import java.nio.charset.StandardCharsets;
 import java.util.HashMap;
@@ -35,12 +32,24 @@ public class RequestClass implements Request {
     }
 
     private void resolveInputStream() throws IOException {
-        BufferedReader reader = new BufferedReader(new InputStreamReader(inpStream, StandardCharsets.UTF_8));
 
+        StringBuilder builder = new StringBuilder();
+        byte[] read = new byte[1];
+
+        while(!builder.toString().endsWith("\r\n\r\n") && !builder.toString().endsWith("\n\n")) {
+            try {
+                if(inpStream.available() <= 0 || inpStream.read(read, 0, 1) == 0) {
+                    break;
+                }
+                builder.append((char) read[0]);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+
+        //HEADERS
+        BufferedReader reader = new BufferedReader(new StringReader(builder.toString()));
         String methodLine = reader.readLine();
-
-        contentBytes = new byte[getContentLength()];
-        inpStream.read(contentBytes, 0, getContentLength());
 
         if (methodLine == null) {
             throw new IllegalStateException();
@@ -52,7 +61,6 @@ public class RequestClass implements Request {
         method = segment[0].toUpperCase();
         url = new UrlClass(segment[1]);
         httpVersion = segment[2];
-
         String line;
 
         while ((line = reader.readLine()) != null && !line.isEmpty()) {
@@ -60,7 +68,19 @@ public class RequestClass implements Request {
             headers.put(headerSplit[0].toLowerCase(), headerSplit[1]);
         }
 
+
+        //CONTENT
+        if(getContentLength() > 0) {
+            try {
+                contentBytes = new byte[getContentLength()];
+                inpStream.read(contentBytes, 0, getContentLength());
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+
     }
+
 
     /**
      * @return Returns true if the request is valid. A request is valid, if
@@ -144,7 +164,7 @@ public class RequestClass implements Request {
      */
     @Override
     public InputStream getContentStream() {
-        return inpStream;
+        return this.inpStream;
     }
 
     /**
@@ -153,7 +173,7 @@ public class RequestClass implements Request {
      */
     @Override
     public String getContentString() throws IOException {
-        return URLDecoder.decode(new String(contentBytes), StandardCharsets.UTF_8);
+        return (contentBytes != null) ? URLDecoder.decode(new String(contentBytes), StandardCharsets.UTF_8) : null;
     }
 
     /**

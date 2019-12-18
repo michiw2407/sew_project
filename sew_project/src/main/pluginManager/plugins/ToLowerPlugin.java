@@ -10,6 +10,7 @@ import java.io.IOException;
 import java.sql.SQLException;
 
 public class ToLowerPlugin implements Plugin {
+
     /**
      * Returns a score between 0 and 1 to indicate that the plugin is willing to
      * handle the request. The plugin with the highest score will execute the
@@ -26,7 +27,8 @@ public class ToLowerPlugin implements Plugin {
                 return 1.0f;
             }
         }
-        return 0.0f;    }
+        return 0.0f;
+    }
 
     /**
      * Called by the server when the plugin should handle the request.
@@ -36,6 +38,31 @@ public class ToLowerPlugin implements Plugin {
      */
     @Override
     public ResponseClass handle(RequestClass req) throws IOException, ParserConfigurationException, SAXException, SQLException {
-        return null;
+        ResponseClass response = new ResponseClass();
+
+        if (req.getContentLength() > 0) {
+            String[] text = req.getContentString().split("=");
+            response.setContent(getHTML(text[1]));
+        } else {
+            response.setContent(getHTML(null));
+        }
+
+        return response;
+    }
+
+    private String getHTML(String text) {
+        return "<html>"
+                + "<head>"
+                + "</head>"
+                + "<body>"
+                + "<form <action='tolower' method='post'>"
+                + "Text: <br><br><textarea rows='4' cols='50' name='text'> </textarea><br><br>"
+                + "<input type='submit' value='Submit'>"
+                + "</form>"
+                + "<br><pre>"
+                + (text != null ? text.toLowerCase() : "")
+                + "</pre>"
+                + "</body>"
+                + "</html>";
     }
 }

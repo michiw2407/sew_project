@@ -36,7 +36,6 @@ public class ServerRun implements Runnable {
                     } else {
                         System.out.println("URL: " + request.getUrl().getRawUrl());
                         fileName+=request.getUrl().getRawUrl();
-                        response.setContent(new String(Files.readAllBytes(Paths.get(fileName))));
                         response.setContent(Files.readAllBytes(Paths.get(fileName)));
                     }
 
