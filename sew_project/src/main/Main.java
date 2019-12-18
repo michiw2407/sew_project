@@ -7,7 +7,7 @@ public class Main {
     public static void main(String[] args) {
 
         Server server;
-        String inputFile = System.getProperty("user.dir") + "/src/resources/files/staticFiles";
+        String inputFile = System.getProperty("user.home") + "/SEWFiles/staticFiles";
 
         int port = 8080;
 

@@ -22,7 +22,7 @@ public class NaviPlugin implements Plugin {
 
     private static String getFile() throws FileNotFoundException {
         String filename = "austria-latest.osm";
-        String inputFile = System.getProperty("user.dir") + "/src/resources/files/mapFiles/" + filename;
+        String inputFile = System.getProperty("user.home") + "/SEWFiles/mapFiles/" + filename;
 
         System.out.println("Valid input file");
         return inputFile;
