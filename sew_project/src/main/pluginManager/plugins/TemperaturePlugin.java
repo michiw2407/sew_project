@@ -32,7 +32,6 @@ public class TemperaturePlugin implements Plugin {
      */
     @Override
     public float canHandle(RequestClass req) throws Exception {
-
         if (req.isValid()) {
             if (req.url.getRawUrl().startsWith("/temp")) {
                 System.out.println("TEMPERATURE PLUGIN VALID");

@@ -5,6 +5,8 @@ import main.request.RequestClass;
 import main.response.ResponseClass;
 
 import java.net.Socket;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 
 public class ServerRun implements Runnable {
 
@@ -20,18 +22,24 @@ public class ServerRun implements Runnable {
     public void run() {
         try {
             RequestClass request = new RequestClass(socket.getInputStream());
-            ResponseClass response = null;
+            ResponseClass response = new ResponseClass();
             Plugin plugin = null;
 
             if (request.isValid()) {
-                System.out.println("PlugManager init");
-                System.out.println();
-                plugin = Server.plugManager.getPlugin(request);
-                System.out.println(plugin);
-                System.out.println(request);
-                System.out.println("gets Plugin");
-                response = plugin.handle(request);
-                System.out.println("sets response");
+                    System.out.println("PlugManager init");
+                    plugin = Server.plugManager.getPlugin(request);
+
+                    if(plugin!=null) {
+                        System.out.println("gets Plugin");
+                        response = plugin.handle(request);
+                        System.out.println("sets response");
+                    } else {
+                        System.out.println("URL: " + request.getUrl().getRawUrl());
+                        fileName+=request.getUrl().getRawUrl();
+                        response.setContent(new String(Files.readAllBytes(Paths.get(fileName))));
+                        response.setContent(Files.readAllBytes(Paths.get(fileName)));
+                    }
+
 
                 if (response == null) {
                     response = new ResponseClass();
@@ -39,6 +47,8 @@ public class ServerRun implements Runnable {
                 } else response.setStatusCode(200);
 
                 response.send(socket.getOutputStream());
+
+
                 socket.close();
             }
         } catch (Exception e) {
