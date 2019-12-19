@@ -1,0 +1,98 @@
+\hypertarget{classmain_1_1plugin_manager_1_1_plugin_manager_class}{}\doxysection{main.\+plugin\+Manager.\+Plugin\+Manager\+Class Class Reference}
+\label{classmain_1_1plugin_manager_1_1_plugin_manager_class}\index{main.pluginManager.PluginManagerClass@{main.pluginManager.PluginManagerClass}}
+Inheritance diagram for main.\+plugin\+Manager.\+Plugin\+Manager\+Class\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classmain_1_1plugin_manager_1_1_plugin_manager_class}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+List$<$ \mbox{\hyperlink{interfaceinterfaces_1_1_plugin}{Plugin}} $>$ \mbox{\hyperlink{classmain_1_1plugin_manager_1_1_plugin_manager_class_a383e212102d642d0e9981c122e8ab635}{get\+Plugins}} ()
+\item 
+\mbox{\Hypertarget{classmain_1_1plugin_manager_1_1_plugin_manager_class_aa6a572bad004ae5607e9ac2e3ff9c59d}\label{classmain_1_1plugin_manager_1_1_plugin_manager_class_aa6a572bad004ae5607e9ac2e3ff9c59d}} 
+\mbox{\hyperlink{interfaceinterfaces_1_1_plugin}{Plugin}} {\bfseries get\+Plugin} (\mbox{\hyperlink{classmain_1_1request_1_1_request_class}{Request\+Class}} request)  throws Exception 
+\item 
+void \mbox{\hyperlink{classmain_1_1plugin_manager_1_1_plugin_manager_class_a92eae589b792241b7d4faf67a9058685}{add}} (\mbox{\hyperlink{classmain_1_1plugin_1_1_plugin_class}{Plugin\+Class}} plugin)
+\item 
+void \mbox{\hyperlink{classmain_1_1plugin_manager_1_1_plugin_manager_class_a1e2fa69f3bc5f2ce79da355826e0c8f9}{add}} (String plugin)  throws Instantiation\+Exception, Illegal\+Access\+Exception, Class\+Not\+Found\+Exception 
+\item 
+void \mbox{\hyperlink{classmain_1_1plugin_manager_1_1_plugin_manager_class_a186599cb1b420834366c43d527219409}{clear}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classmain_1_1plugin_manager_1_1_plugin_manager_class_a92eae589b792241b7d4faf67a9058685}\label{classmain_1_1plugin_manager_1_1_plugin_manager_class_a92eae589b792241b7d4faf67a9058685}} 
+\index{main.pluginManager.PluginManagerClass@{main.pluginManager.PluginManagerClass}!add@{add}}
+\index{add@{add}!main.pluginManager.PluginManagerClass@{main.pluginManager.PluginManagerClass}}
+\doxysubsubsection{\texorpdfstring{add()}{add()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void main.\+plugin\+Manager.\+Plugin\+Manager\+Class.\+add (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classmain_1_1plugin_1_1_plugin_class}{Plugin\+Class}}}]{plugin }\end{DoxyParamCaption})}
+
+Adds a new plugin. If the plugin was already added, nothing will happen.
+
+
+\begin{DoxyParams}{Parameters}
+{\em plugin} & \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{interfaceinterfaces_1_1_plugin_manager_ae8c8d300a642dd95021cc00b0648d536}{interfaces.\+Plugin\+Manager}}.
+
+\mbox{\Hypertarget{classmain_1_1plugin_manager_1_1_plugin_manager_class_a1e2fa69f3bc5f2ce79da355826e0c8f9}\label{classmain_1_1plugin_manager_1_1_plugin_manager_class_a1e2fa69f3bc5f2ce79da355826e0c8f9}} 
+\index{main.pluginManager.PluginManagerClass@{main.pluginManager.PluginManagerClass}!add@{add}}
+\index{add@{add}!main.pluginManager.PluginManagerClass@{main.pluginManager.PluginManagerClass}}
+\doxysubsubsection{\texorpdfstring{add()}{add()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void main.\+plugin\+Manager.\+Plugin\+Manager\+Class.\+add (\begin{DoxyParamCaption}\item[{String}]{plugin }\end{DoxyParamCaption}) throws Instantiation\+Exception, Illegal\+Access\+Exception, Class\+Not\+Found\+Exception}
+
+Adds a new plugin by class name. If the plugin was already added, nothing will happen. Throws an exception, when the type cannot be resoled or the class does not implement Plugin.
+
+
+\begin{DoxyParams}{Parameters}
+{\em plugin} & \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Class\+Not\+Found\+Exception} & \\
+\hline
+{\em Illegal\+Access\+Exception} & \\
+\hline
+{\em Instantiation\+Exception} & \\
+\hline
+\end{DoxyExceptions}
+
+
+Implements \mbox{\hyperlink{interfaceinterfaces_1_1_plugin_manager_a9c45284ca60908aeabaad80737355eb1}{interfaces.\+Plugin\+Manager}}.
+
+\mbox{\Hypertarget{classmain_1_1plugin_manager_1_1_plugin_manager_class_a186599cb1b420834366c43d527219409}\label{classmain_1_1plugin_manager_1_1_plugin_manager_class_a186599cb1b420834366c43d527219409}} 
+\index{main.pluginManager.PluginManagerClass@{main.pluginManager.PluginManagerClass}!clear@{clear}}
+\index{clear@{clear}!main.pluginManager.PluginManagerClass@{main.pluginManager.PluginManagerClass}}
+\doxysubsubsection{\texorpdfstring{clear()}{clear()}}
+{\footnotesize\ttfamily void main.\+plugin\+Manager.\+Plugin\+Manager\+Class.\+clear (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Clears all plugins 
+
+Implements \mbox{\hyperlink{interfaceinterfaces_1_1_plugin_manager_a45281cdd38c3cc49da8c4d125b8c0c81}{interfaces.\+Plugin\+Manager}}.
+
+\mbox{\Hypertarget{classmain_1_1plugin_manager_1_1_plugin_manager_class_a383e212102d642d0e9981c122e8ab635}\label{classmain_1_1plugin_manager_1_1_plugin_manager_class_a383e212102d642d0e9981c122e8ab635}} 
+\index{main.pluginManager.PluginManagerClass@{main.pluginManager.PluginManagerClass}!getPlugins@{getPlugins}}
+\index{getPlugins@{getPlugins}!main.pluginManager.PluginManagerClass@{main.pluginManager.PluginManagerClass}}
+\doxysubsubsection{\texorpdfstring{getPlugins()}{getPlugins()}}
+{\footnotesize\ttfamily List$<$\mbox{\hyperlink{interfaceinterfaces_1_1_plugin}{Plugin}}$>$ main.\+plugin\+Manager.\+Plugin\+Manager\+Class.\+get\+Plugins (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Returns a list of all plugins. Never returns null. T\+O\+DO\+: Refactor to List$<$\+Plugin$>$, Enumeration is deprecated
+
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{interfaceinterfaces_1_1_plugin_manager_a855daf2f2ad419cc53ba2846d46676b3}{interfaces.\+Plugin\+Manager}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/main/plugin\+Manager/Plugin\+Manager\+Class.\+java\end{DoxyCompactItemize}

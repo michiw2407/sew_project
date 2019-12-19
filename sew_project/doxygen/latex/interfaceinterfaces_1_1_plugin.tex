@@ -1,0 +1,63 @@
+\hypertarget{interfaceinterfaces_1_1_plugin}{}\doxysection{interfaces.\+Plugin Interface Reference}
+\label{interfaceinterfaces_1_1_plugin}\index{interfaces.Plugin@{interfaces.Plugin}}
+Inheritance diagram for interfaces.\+Plugin\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=0.968858cm]{interfaceinterfaces_1_1_plugin}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+float \mbox{\hyperlink{interfaceinterfaces_1_1_plugin_a2f124bf1dea12e721e9408bd32da54aa}{can\+Handle}} (\mbox{\hyperlink{classmain_1_1request_1_1_request_class}{Request\+Class}} req)  throws Exception
+\item 
+\mbox{\hyperlink{classmain_1_1response_1_1_response_class}{Response\+Class}} \mbox{\hyperlink{interfaceinterfaces_1_1_plugin_ae7834a61c65388ec3d74d203fa5051d4}{handle}} (\mbox{\hyperlink{classmain_1_1request_1_1_request_class}{Request\+Class}} req)  throws I\+O\+Exception, Parser\+Configuration\+Exception, S\+A\+X\+Exception, S\+Q\+L\+Exception
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{interfaceinterfaces_1_1_plugin_a2f124bf1dea12e721e9408bd32da54aa}\label{interfaceinterfaces_1_1_plugin_a2f124bf1dea12e721e9408bd32da54aa}} 
+\index{interfaces.Plugin@{interfaces.Plugin}!canHandle@{canHandle}}
+\index{canHandle@{canHandle}!interfaces.Plugin@{interfaces.Plugin}}
+\doxysubsubsection{\texorpdfstring{canHandle()}{canHandle()}}
+{\footnotesize\ttfamily float interfaces.\+Plugin.\+can\+Handle (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classmain_1_1request_1_1_request_class}{Request\+Class}}}]{req }\end{DoxyParamCaption}) throws Exception}
+
+Returns a score between 0 and 1 to indicate that the plugin is willing to handle the request. The plugin with the highest score will execute the request.
+
+
+\begin{DoxyParams}{Parameters}
+{\em req} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A score between 0 and 1 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classmain_1_1plugin_manager_1_1plugins_1_1_navi_plugin_ae88c1998d043c60f3f4a444dbccfeaf9}{main.\+plugin\+Manager.\+plugins.\+Navi\+Plugin}}, \mbox{\hyperlink{classmain_1_1plugin_manager_1_1plugins_1_1_temperature_plugin_a07c02d97c2c0fc508dc41ef3b5cd6dfe}{main.\+plugin\+Manager.\+plugins.\+Temperature\+Plugin}}, \mbox{\hyperlink{classmain_1_1plugin_manager_1_1plugins_1_1_to_lower_plugin_a2e40c3d7c7d0dc8121efb349b388759e}{main.\+plugin\+Manager.\+plugins.\+To\+Lower\+Plugin}}, and \mbox{\hyperlink{classmain_1_1plugin_1_1_plugin_class_a4565e5bfa0efa8957865fbac8024f8c5}{main.\+plugin.\+Plugin\+Class}}.
+
+\mbox{\Hypertarget{interfaceinterfaces_1_1_plugin_ae7834a61c65388ec3d74d203fa5051d4}\label{interfaceinterfaces_1_1_plugin_ae7834a61c65388ec3d74d203fa5051d4}} 
+\index{interfaces.Plugin@{interfaces.Plugin}!handle@{handle}}
+\index{handle@{handle}!interfaces.Plugin@{interfaces.Plugin}}
+\doxysubsubsection{\texorpdfstring{handle()}{handle()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classmain_1_1response_1_1_response_class}{Response\+Class}} interfaces.\+Plugin.\+handle (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classmain_1_1request_1_1_request_class}{Request\+Class}}}]{req }\end{DoxyParamCaption}) throws I\+O\+Exception, Parser\+Configuration\+Exception, S\+A\+X\+Exception, S\+Q\+L\+Exception}
+
+Called by the server when the plugin should handle the request.
+
+
+\begin{DoxyParams}{Parameters}
+{\em req} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A new response object. 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classmain_1_1plugin_manager_1_1plugins_1_1_navi_plugin_ae98a7350dd847eca6e8eebfe354ebdf7}{main.\+plugin\+Manager.\+plugins.\+Navi\+Plugin}}, \mbox{\hyperlink{classmain_1_1plugin_manager_1_1plugins_1_1_temperature_plugin_a624f3c9a60bed508c3423dc0380d620c}{main.\+plugin\+Manager.\+plugins.\+Temperature\+Plugin}}, \mbox{\hyperlink{classmain_1_1plugin_manager_1_1plugins_1_1_to_lower_plugin_af18f7e8f0fcc78230d5ae3973259fc58}{main.\+plugin\+Manager.\+plugins.\+To\+Lower\+Plugin}}, and \mbox{\hyperlink{classmain_1_1plugin_1_1_plugin_class_a126f197079bcc52739fe7b929d0935ba}{main.\+plugin.\+Plugin\+Class}}.
+
+
+
+The documentation for this interface was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/interfaces/Plugin.\+java\end{DoxyCompactItemize}

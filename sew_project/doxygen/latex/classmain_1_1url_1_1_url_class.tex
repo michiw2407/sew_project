@@ -1,0 +1,156 @@
+\hypertarget{classmain_1_1url_1_1_url_class}{}\doxysection{main.\+url.\+Url\+Class Class Reference}
+\label{classmain_1_1url_1_1_url_class}\index{main.url.UrlClass@{main.url.UrlClass}}
+Inheritance diagram for main.\+url.\+Url\+Class\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classmain_1_1url_1_1_url_class}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classmain_1_1url_1_1_url_class_a31a60a7156ca2e0f8a67537d6fe21bfe}{Url\+Class}} (String url)
+\item 
+String \mbox{\hyperlink{classmain_1_1url_1_1_url_class_a7938f87efce4231a91357422ce9afb71}{get\+Raw\+Url}} ()
+\item 
+String \mbox{\hyperlink{classmain_1_1url_1_1_url_class_a45cb8200185943873cf9a4f9f1251559}{get\+Path}} ()
+\item 
+Map$<$ String, String $>$ \mbox{\hyperlink{classmain_1_1url_1_1_url_class_a1ad1442427771ff34bd3929c59a83a9e}{get\+Parameter}} ()
+\item 
+int \mbox{\hyperlink{classmain_1_1url_1_1_url_class_a0d891bfc1c8310384a23ceb84f7240cd}{get\+Parameter\+Count}} ()
+\item 
+String\mbox{[}$\,$\mbox{]} \mbox{\hyperlink{classmain_1_1url_1_1_url_class_af31a66c04dbbb4976964c7c42b21ff8c}{get\+Segments}} ()
+\item 
+String \mbox{\hyperlink{classmain_1_1url_1_1_url_class_ad57bd51d0f094ead137863deddda6b74}{get\+File\+Name}} ()
+\item 
+String \mbox{\hyperlink{classmain_1_1url_1_1_url_class_aa43e5cae3d2131e9dbde548b9a3e85d1}{get\+Extension}} ()
+\item 
+String \mbox{\hyperlink{classmain_1_1url_1_1_url_class_a19f790a25426c4423608c086c3abd68b}{get\+Fragment}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classmain_1_1url_1_1_url_class_ad9a53be11fa624129632cadc30661e7b}\label{classmain_1_1url_1_1_url_class_ad9a53be11fa624129632cadc30661e7b}} 
+static void {\bfseries main} (String\mbox{[}$\,$\mbox{]} args)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classmain_1_1url_1_1_url_class_a31a60a7156ca2e0f8a67537d6fe21bfe}\label{classmain_1_1url_1_1_url_class_a31a60a7156ca2e0f8a67537d6fe21bfe}} 
+\index{main.url.UrlClass@{main.url.UrlClass}!UrlClass@{UrlClass}}
+\index{UrlClass@{UrlClass}!main.url.UrlClass@{main.url.UrlClass}}
+\doxysubsubsection{\texorpdfstring{UrlClass()}{UrlClass()}}
+{\footnotesize\ttfamily main.\+url.\+Url\+Class.\+Url\+Class (\begin{DoxyParamCaption}\item[{String}]{url }\end{DoxyParamCaption})}
+
+Constructor 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classmain_1_1url_1_1_url_class_aa43e5cae3d2131e9dbde548b9a3e85d1}\label{classmain_1_1url_1_1_url_class_aa43e5cae3d2131e9dbde548b9a3e85d1}} 
+\index{main.url.UrlClass@{main.url.UrlClass}!getExtension@{getExtension}}
+\index{getExtension@{getExtension}!main.url.UrlClass@{main.url.UrlClass}}
+\doxysubsubsection{\texorpdfstring{getExtension()}{getExtension()}}
+{\footnotesize\ttfamily String main.\+url.\+Url\+Class.\+get\+Extension (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\begin{DoxyReturn}{Returns}
+Returns the extension of the main.\+url filename, including the leading dot. If the main.\+url contains no filename, a empty string is returned. Never returns null. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{interfaceinterfaces_1_1_url_a9863c97674eb90d55d3fc68779f3fbab}{interfaces.\+Url}}.
+
+\mbox{\Hypertarget{classmain_1_1url_1_1_url_class_ad57bd51d0f094ead137863deddda6b74}\label{classmain_1_1url_1_1_url_class_ad57bd51d0f094ead137863deddda6b74}} 
+\index{main.url.UrlClass@{main.url.UrlClass}!getFileName@{getFileName}}
+\index{getFileName@{getFileName}!main.url.UrlClass@{main.url.UrlClass}}
+\doxysubsubsection{\texorpdfstring{getFileName()}{getFileName()}}
+{\footnotesize\ttfamily String main.\+url.\+Url\+Class.\+get\+File\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\begin{DoxyReturn}{Returns}
+Returns the filename (with extension) of the main.\+url path. If the main.\+url contains no filename, a empty string is returned. Never returns null. A filename is present in the main.\+url, if the last segment contains a name with at least one dot. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{interfaceinterfaces_1_1_url_ab84d03550af0e472e3a1f46b4bb680bd}{interfaces.\+Url}}.
+
+\mbox{\Hypertarget{classmain_1_1url_1_1_url_class_a19f790a25426c4423608c086c3abd68b}\label{classmain_1_1url_1_1_url_class_a19f790a25426c4423608c086c3abd68b}} 
+\index{main.url.UrlClass@{main.url.UrlClass}!getFragment@{getFragment}}
+\index{getFragment@{getFragment}!main.url.UrlClass@{main.url.UrlClass}}
+\doxysubsubsection{\texorpdfstring{getFragment()}{getFragment()}}
+{\footnotesize\ttfamily String main.\+url.\+Url\+Class.\+get\+Fragment (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\begin{DoxyReturn}{Returns}
+Returns the main.\+url fragment. A fragment is the part after a \textquotesingle{}\#\textquotesingle{} char at the end of the main.\+url. If the main.\+url contains no fragment, a empty string is returned. Never returns null. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{interfaceinterfaces_1_1_url_aa0cbe38c06bcc429fcba190d96e76102}{interfaces.\+Url}}.
+
+\mbox{\Hypertarget{classmain_1_1url_1_1_url_class_a1ad1442427771ff34bd3929c59a83a9e}\label{classmain_1_1url_1_1_url_class_a1ad1442427771ff34bd3929c59a83a9e}} 
+\index{main.url.UrlClass@{main.url.UrlClass}!getParameter@{getParameter}}
+\index{getParameter@{getParameter}!main.url.UrlClass@{main.url.UrlClass}}
+\doxysubsubsection{\texorpdfstring{getParameter()}{getParameter()}}
+{\footnotesize\ttfamily Map$<$String, String$>$ main.\+url.\+Url\+Class.\+get\+Parameter (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\begin{DoxyReturn}{Returns}
+Returns a dictionary with the parameter of the main.\+url. Never returns null. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{interfaceinterfaces_1_1_url_ae09426059dbbd507d434dd838ca05c4e}{interfaces.\+Url}}.
+
+\mbox{\Hypertarget{classmain_1_1url_1_1_url_class_a0d891bfc1c8310384a23ceb84f7240cd}\label{classmain_1_1url_1_1_url_class_a0d891bfc1c8310384a23ceb84f7240cd}} 
+\index{main.url.UrlClass@{main.url.UrlClass}!getParameterCount@{getParameterCount}}
+\index{getParameterCount@{getParameterCount}!main.url.UrlClass@{main.url.UrlClass}}
+\doxysubsubsection{\texorpdfstring{getParameterCount()}{getParameterCount()}}
+{\footnotesize\ttfamily int main.\+url.\+Url\+Class.\+get\+Parameter\+Count (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\begin{DoxyReturn}{Returns}
+Returns the number of parameter of the main.\+url. Returns 0 if there are no parameter. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{interfaceinterfaces_1_1_url_a47f5a92308d8ed6a6168015a40e1af28}{interfaces.\+Url}}.
+
+\mbox{\Hypertarget{classmain_1_1url_1_1_url_class_a45cb8200185943873cf9a4f9f1251559}\label{classmain_1_1url_1_1_url_class_a45cb8200185943873cf9a4f9f1251559}} 
+\index{main.url.UrlClass@{main.url.UrlClass}!getPath@{getPath}}
+\index{getPath@{getPath}!main.url.UrlClass@{main.url.UrlClass}}
+\doxysubsubsection{\texorpdfstring{getPath()}{getPath()}}
+{\footnotesize\ttfamily String main.\+url.\+Url\+Class.\+get\+Path (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\begin{DoxyReturn}{Returns}
+Returns the path of the main.\+url, without parameter. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{interfaceinterfaces_1_1_url_a8c0324a6fdca8cb455fcdfd8cb024297}{interfaces.\+Url}}.
+
+\mbox{\Hypertarget{classmain_1_1url_1_1_url_class_a7938f87efce4231a91357422ce9afb71}\label{classmain_1_1url_1_1_url_class_a7938f87efce4231a91357422ce9afb71}} 
+\index{main.url.UrlClass@{main.url.UrlClass}!getRawUrl@{getRawUrl}}
+\index{getRawUrl@{getRawUrl}!main.url.UrlClass@{main.url.UrlClass}}
+\doxysubsubsection{\texorpdfstring{getRawUrl()}{getRawUrl()}}
+{\footnotesize\ttfamily String main.\+url.\+Url\+Class.\+get\+Raw\+Url (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\begin{DoxyReturn}{Returns}
+Returns the raw main.\+url. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{interfaceinterfaces_1_1_url_a7dc4a183d4ffc2253978a7e99c530022}{interfaces.\+Url}}.
+
+\mbox{\Hypertarget{classmain_1_1url_1_1_url_class_af31a66c04dbbb4976964c7c42b21ff8c}\label{classmain_1_1url_1_1_url_class_af31a66c04dbbb4976964c7c42b21ff8c}} 
+\index{main.url.UrlClass@{main.url.UrlClass}!getSegments@{getSegments}}
+\index{getSegments@{getSegments}!main.url.UrlClass@{main.url.UrlClass}}
+\doxysubsubsection{\texorpdfstring{getSegments()}{getSegments()}}
+{\footnotesize\ttfamily String \mbox{[}$\,$\mbox{]} main.\+url.\+Url\+Class.\+get\+Segments (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\begin{DoxyReturn}{Returns}
+Returns the segments of the main.\+url path. A segment is divided by \textquotesingle{}/\textquotesingle{} chars. Never returns null. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{interfaceinterfaces_1_1_url_ac689fb3779517dd8c5f9274b6501a849}{interfaces.\+Url}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/main/url/Url\+Class.\+java\end{DoxyCompactItemize}

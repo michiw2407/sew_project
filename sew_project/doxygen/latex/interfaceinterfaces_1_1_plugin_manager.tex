@@ -1,0 +1,89 @@
+\hypertarget{interfaceinterfaces_1_1_plugin_manager}{}\doxysection{interfaces.\+Plugin\+Manager Interface Reference}
+\label{interfaceinterfaces_1_1_plugin_manager}\index{interfaces.PluginManager@{interfaces.PluginManager}}
+Inheritance diagram for interfaces.\+Plugin\+Manager\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{interfaceinterfaces_1_1_plugin_manager}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+List$<$ \mbox{\hyperlink{interfaceinterfaces_1_1_plugin}{Plugin}} $>$ \mbox{\hyperlink{interfaceinterfaces_1_1_plugin_manager_a855daf2f2ad419cc53ba2846d46676b3}{get\+Plugins}} ()
+\item 
+void \mbox{\hyperlink{interfaceinterfaces_1_1_plugin_manager_ae8c8d300a642dd95021cc00b0648d536}{add}} (\mbox{\hyperlink{classmain_1_1plugin_1_1_plugin_class}{Plugin\+Class}} plugin)
+\item 
+void \mbox{\hyperlink{interfaceinterfaces_1_1_plugin_manager_a9c45284ca60908aeabaad80737355eb1}{add}} (String plugin)  throws Instantiation\+Exception, Illegal\+Access\+Exception, Class\+Not\+Found\+Exception
+\item 
+void \mbox{\hyperlink{interfaceinterfaces_1_1_plugin_manager_a45281cdd38c3cc49da8c4d125b8c0c81}{clear}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{interfaceinterfaces_1_1_plugin_manager_ae8c8d300a642dd95021cc00b0648d536}\label{interfaceinterfaces_1_1_plugin_manager_ae8c8d300a642dd95021cc00b0648d536}} 
+\index{interfaces.PluginManager@{interfaces.PluginManager}!add@{add}}
+\index{add@{add}!interfaces.PluginManager@{interfaces.PluginManager}}
+\doxysubsubsection{\texorpdfstring{add()}{add()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void interfaces.\+Plugin\+Manager.\+add (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classmain_1_1plugin_1_1_plugin_class}{Plugin\+Class}}}]{plugin }\end{DoxyParamCaption})}
+
+Adds a new plugin. If the plugin was already added, nothing will happen. 
+\begin{DoxyParams}{Parameters}
+{\em plugin} & \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{classmain_1_1plugin_manager_1_1_plugin_manager_class_a92eae589b792241b7d4faf67a9058685}{main.\+plugin\+Manager.\+Plugin\+Manager\+Class}}.
+
+\mbox{\Hypertarget{interfaceinterfaces_1_1_plugin_manager_a9c45284ca60908aeabaad80737355eb1}\label{interfaceinterfaces_1_1_plugin_manager_a9c45284ca60908aeabaad80737355eb1}} 
+\index{interfaces.PluginManager@{interfaces.PluginManager}!add@{add}}
+\index{add@{add}!interfaces.PluginManager@{interfaces.PluginManager}}
+\doxysubsubsection{\texorpdfstring{add()}{add()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void interfaces.\+Plugin\+Manager.\+add (\begin{DoxyParamCaption}\item[{String}]{plugin }\end{DoxyParamCaption}) throws Instantiation\+Exception, Illegal\+Access\+Exception, Class\+Not\+Found\+Exception}
+
+Adds a new plugin by class name. If the plugin was already added, nothing will happen. Throws an exeption, when the type cannot be resoled or the class does not implement \mbox{\hyperlink{interfaceinterfaces_1_1_plugin}{Plugin}}. 
+\begin{DoxyParams}{Parameters}
+{\em plugin} & \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Class\+Not\+Found\+Exception} & \\
+\hline
+{\em Illegal\+Access\+Exception} & \\
+\hline
+{\em Instantiation\+Exception} & \\
+\hline
+\end{DoxyExceptions}
+
+
+Implemented in \mbox{\hyperlink{classmain_1_1plugin_manager_1_1_plugin_manager_class_a1e2fa69f3bc5f2ce79da355826e0c8f9}{main.\+plugin\+Manager.\+Plugin\+Manager\+Class}}.
+
+\mbox{\Hypertarget{interfaceinterfaces_1_1_plugin_manager_a45281cdd38c3cc49da8c4d125b8c0c81}\label{interfaceinterfaces_1_1_plugin_manager_a45281cdd38c3cc49da8c4d125b8c0c81}} 
+\index{interfaces.PluginManager@{interfaces.PluginManager}!clear@{clear}}
+\index{clear@{clear}!interfaces.PluginManager@{interfaces.PluginManager}}
+\doxysubsubsection{\texorpdfstring{clear()}{clear()}}
+{\footnotesize\ttfamily void interfaces.\+Plugin\+Manager.\+clear (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Clears all plugins 
+
+Implemented in \mbox{\hyperlink{classmain_1_1plugin_manager_1_1_plugin_manager_class_a186599cb1b420834366c43d527219409}{main.\+plugin\+Manager.\+Plugin\+Manager\+Class}}.
+
+\mbox{\Hypertarget{interfaceinterfaces_1_1_plugin_manager_a855daf2f2ad419cc53ba2846d46676b3}\label{interfaceinterfaces_1_1_plugin_manager_a855daf2f2ad419cc53ba2846d46676b3}} 
+\index{interfaces.PluginManager@{interfaces.PluginManager}!getPlugins@{getPlugins}}
+\index{getPlugins@{getPlugins}!interfaces.PluginManager@{interfaces.PluginManager}}
+\doxysubsubsection{\texorpdfstring{getPlugins()}{getPlugins()}}
+{\footnotesize\ttfamily List$<$\mbox{\hyperlink{interfaceinterfaces_1_1_plugin}{Plugin}}$>$ interfaces.\+Plugin\+Manager.\+get\+Plugins (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Returns a list of all plugins. Never returns null. T\+O\+DO\+: Refactor to List$<$\+Plugin$>$, Enumeration is deprecated \begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classmain_1_1plugin_manager_1_1_plugin_manager_class_a383e212102d642d0e9981c122e8ab635}{main.\+plugin\+Manager.\+Plugin\+Manager\+Class}}.
+
+
+
+The documentation for this interface was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/interfaces/Plugin\+Manager.\+java\end{DoxyCompactItemize}

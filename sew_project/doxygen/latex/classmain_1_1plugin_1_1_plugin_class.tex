@@ -1,0 +1,63 @@
+\hypertarget{classmain_1_1plugin_1_1_plugin_class}{}\doxysection{main.\+plugin.\+Plugin\+Class Class Reference}
+\label{classmain_1_1plugin_1_1_plugin_class}\index{main.plugin.PluginClass@{main.plugin.PluginClass}}
+Inheritance diagram for main.\+plugin.\+Plugin\+Class\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classmain_1_1plugin_1_1_plugin_class}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+float \mbox{\hyperlink{classmain_1_1plugin_1_1_plugin_class_a4565e5bfa0efa8957865fbac8024f8c5}{can\+Handle}} (\mbox{\hyperlink{classmain_1_1request_1_1_request_class}{Request\+Class}} req)
+\item 
+\mbox{\hyperlink{classmain_1_1response_1_1_response_class}{Response\+Class}} \mbox{\hyperlink{classmain_1_1plugin_1_1_plugin_class_a126f197079bcc52739fe7b929d0935ba}{handle}} (\mbox{\hyperlink{classmain_1_1request_1_1_request_class}{Request\+Class}} req)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classmain_1_1plugin_1_1_plugin_class_a4565e5bfa0efa8957865fbac8024f8c5}\label{classmain_1_1plugin_1_1_plugin_class_a4565e5bfa0efa8957865fbac8024f8c5}} 
+\index{main.plugin.PluginClass@{main.plugin.PluginClass}!canHandle@{canHandle}}
+\index{canHandle@{canHandle}!main.plugin.PluginClass@{main.plugin.PluginClass}}
+\doxysubsubsection{\texorpdfstring{canHandle()}{canHandle()}}
+{\footnotesize\ttfamily float main.\+plugin.\+Plugin\+Class.\+can\+Handle (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classmain_1_1request_1_1_request_class}{Request\+Class}}}]{req }\end{DoxyParamCaption})}
+
+Returns a score between 0 and 1 to indicate that the plugin is willing to handle the request. The plugin with the highest score will execute the request.
+
+
+\begin{DoxyParams}{Parameters}
+{\em req} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A score between 0 and 1 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{interfaceinterfaces_1_1_plugin_a2f124bf1dea12e721e9408bd32da54aa}{interfaces.\+Plugin}}.
+
+\mbox{\Hypertarget{classmain_1_1plugin_1_1_plugin_class_a126f197079bcc52739fe7b929d0935ba}\label{classmain_1_1plugin_1_1_plugin_class_a126f197079bcc52739fe7b929d0935ba}} 
+\index{main.plugin.PluginClass@{main.plugin.PluginClass}!handle@{handle}}
+\index{handle@{handle}!main.plugin.PluginClass@{main.plugin.PluginClass}}
+\doxysubsubsection{\texorpdfstring{handle()}{handle()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classmain_1_1response_1_1_response_class}{Response\+Class}} main.\+plugin.\+Plugin\+Class.\+handle (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classmain_1_1request_1_1_request_class}{Request\+Class}}}]{req }\end{DoxyParamCaption})}
+
+Called by the server when the plugin should handle the request.
+
+
+\begin{DoxyParams}{Parameters}
+{\em req} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A new response object. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{interfaceinterfaces_1_1_plugin_ae7834a61c65388ec3d74d203fa5051d4}{interfaces.\+Plugin}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/main/plugin/Plugin\+Class.\+java\end{DoxyCompactItemize}

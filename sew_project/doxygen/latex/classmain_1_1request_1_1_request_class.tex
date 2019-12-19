@@ -1,0 +1,198 @@
+\hypertarget{classmain_1_1request_1_1_request_class}{}\doxysection{main.\+request.\+Request\+Class Class Reference}
+\label{classmain_1_1request_1_1_request_class}\index{main.request.RequestClass@{main.request.RequestClass}}
+Inheritance diagram for main.\+request.\+Request\+Class\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classmain_1_1request_1_1_request_class}
+\end{center}
+\end{figure}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{enummain_1_1request_1_1_request_class_1_1_http_method}{Http\+Method}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classmain_1_1request_1_1_request_class_a73706852d3070def322eb87d0d5111ab}\label{classmain_1_1request_1_1_request_class_a73706852d3070def322eb87d0d5111ab}} 
+{\bfseries Request\+Class} (Input\+Stream input\+Stream)  throws I\+O\+Exception 
+\item 
+boolean \mbox{\hyperlink{classmain_1_1request_1_1_request_class_ad502c648a9407326ad8e6fa5ee544e94}{is\+Valid}} ()
+\item 
+String \mbox{\hyperlink{classmain_1_1request_1_1_request_class_a08e154a76e9c3cf785cc65463a4dfb45}{get\+Method}} ()
+\item 
+\mbox{\hyperlink{classmain_1_1url_1_1_url_class}{Url\+Class}} \mbox{\hyperlink{classmain_1_1request_1_1_request_class_a62588719ad80ab86abde01b07f903171}{get\+Url}} ()
+\item 
+Map$<$ String, String $>$ \mbox{\hyperlink{classmain_1_1request_1_1_request_class_aedb2a0e5999cdb780329e3ca0b0990fa}{get\+Headers}} ()
+\item 
+int \mbox{\hyperlink{classmain_1_1request_1_1_request_class_acd5e0cd30cef134fe1d5e23216ff99a5}{get\+Header\+Count}} ()
+\item 
+String \mbox{\hyperlink{classmain_1_1request_1_1_request_class_aead375d9fad9578cd7796443a6fc347f}{get\+User\+Agent}} ()
+\item 
+int \mbox{\hyperlink{classmain_1_1request_1_1_request_class_a14ecc6de4c86ac8d8bd2a8cbeae1c0f4}{get\+Content\+Length}} ()
+\item 
+String \mbox{\hyperlink{classmain_1_1request_1_1_request_class_ac8cf4310184c59ed71b23f73e990f81d}{get\+Content\+Type}} ()
+\item 
+Input\+Stream \mbox{\hyperlink{classmain_1_1request_1_1_request_class_aa80b9d23801954d34c76996aaad10d46}{get\+Content\+Stream}} ()
+\item 
+String \mbox{\hyperlink{classmain_1_1request_1_1_request_class_a0e0d6d70290287263ac460991dea82c3}{get\+Content\+String}} ()  throws I\+O\+Exception 
+\item 
+byte\mbox{[}$\,$\mbox{]} \mbox{\hyperlink{classmain_1_1request_1_1_request_class_a9be6b7e43c275f8daa706e984d101df4}{get\+Content\+Bytes}} ()  throws I\+O\+Exception 
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classmain_1_1request_1_1_request_class_adebd4fae41d8ab02a8f11c6604558bf1}\label{classmain_1_1request_1_1_request_class_adebd4fae41d8ab02a8f11c6604558bf1}} 
+\mbox{\hyperlink{classmain_1_1url_1_1_url_class}{Url\+Class}} {\bfseries url} = new \mbox{\hyperlink{classmain_1_1url_1_1_url_class}{Url\+Class}}(\char`\"{}/\char`\"{})
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classmain_1_1request_1_1_request_class_a9be6b7e43c275f8daa706e984d101df4}\label{classmain_1_1request_1_1_request_class_a9be6b7e43c275f8daa706e984d101df4}} 
+\index{main.request.RequestClass@{main.request.RequestClass}!getContentBytes@{getContentBytes}}
+\index{getContentBytes@{getContentBytes}!main.request.RequestClass@{main.request.RequestClass}}
+\doxysubsubsection{\texorpdfstring{getContentBytes()}{getContentBytes()}}
+{\footnotesize\ttfamily byte \mbox{[}$\,$\mbox{]} main.\+request.\+Request\+Class.\+get\+Content\+Bytes (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) throws I\+O\+Exception}
+
+\begin{DoxyReturn}{Returns}
+Returns the request content (body) as byte\mbox{[}\mbox{]} or null if there is no content. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{interfaceinterfaces_1_1_request_a6db51e8568257e597b0ae35c60312a9d}{interfaces.\+Request}}.
+
+\mbox{\Hypertarget{classmain_1_1request_1_1_request_class_a14ecc6de4c86ac8d8bd2a8cbeae1c0f4}\label{classmain_1_1request_1_1_request_class_a14ecc6de4c86ac8d8bd2a8cbeae1c0f4}} 
+\index{main.request.RequestClass@{main.request.RequestClass}!getContentLength@{getContentLength}}
+\index{getContentLength@{getContentLength}!main.request.RequestClass@{main.request.RequestClass}}
+\doxysubsubsection{\texorpdfstring{getContentLength()}{getContentLength()}}
+{\footnotesize\ttfamily int main.\+request.\+Request\+Class.\+get\+Content\+Length (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\begin{DoxyReturn}{Returns}
+Returns the parsed content length request header. Never returns null. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{interfaceinterfaces_1_1_request_a74248bee9a1593ace8324bfac74d0526}{interfaces.\+Request}}.
+
+\mbox{\Hypertarget{classmain_1_1request_1_1_request_class_aa80b9d23801954d34c76996aaad10d46}\label{classmain_1_1request_1_1_request_class_aa80b9d23801954d34c76996aaad10d46}} 
+\index{main.request.RequestClass@{main.request.RequestClass}!getContentStream@{getContentStream}}
+\index{getContentStream@{getContentStream}!main.request.RequestClass@{main.request.RequestClass}}
+\doxysubsubsection{\texorpdfstring{getContentStream()}{getContentStream()}}
+{\footnotesize\ttfamily Input\+Stream main.\+request.\+Request\+Class.\+get\+Content\+Stream (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\begin{DoxyReturn}{Returns}
+Returns the request content (body) stream or null if there is no content stream. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{interfaceinterfaces_1_1_request_a267209b134dc4b62b6ef8953a85f648a}{interfaces.\+Request}}.
+
+\mbox{\Hypertarget{classmain_1_1request_1_1_request_class_a0e0d6d70290287263ac460991dea82c3}\label{classmain_1_1request_1_1_request_class_a0e0d6d70290287263ac460991dea82c3}} 
+\index{main.request.RequestClass@{main.request.RequestClass}!getContentString@{getContentString}}
+\index{getContentString@{getContentString}!main.request.RequestClass@{main.request.RequestClass}}
+\doxysubsubsection{\texorpdfstring{getContentString()}{getContentString()}}
+{\footnotesize\ttfamily String main.\+request.\+Request\+Class.\+get\+Content\+String (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) throws I\+O\+Exception}
+
+\begin{DoxyReturn}{Returns}
+Returns the request content (body) as string or null if there is no content. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{interfaceinterfaces_1_1_request_a4dc8cb81ae26d416a1750f46f0d69859}{interfaces.\+Request}}.
+
+\mbox{\Hypertarget{classmain_1_1request_1_1_request_class_ac8cf4310184c59ed71b23f73e990f81d}\label{classmain_1_1request_1_1_request_class_ac8cf4310184c59ed71b23f73e990f81d}} 
+\index{main.request.RequestClass@{main.request.RequestClass}!getContentType@{getContentType}}
+\index{getContentType@{getContentType}!main.request.RequestClass@{main.request.RequestClass}}
+\doxysubsubsection{\texorpdfstring{getContentType()}{getContentType()}}
+{\footnotesize\ttfamily String main.\+request.\+Request\+Class.\+get\+Content\+Type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\begin{DoxyReturn}{Returns}
+Returns the parsed content type request header. Never returns null. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{interfaceinterfaces_1_1_request_a76efad5653ff3bd8cd2dda22f5c6aba8}{interfaces.\+Request}}.
+
+\mbox{\Hypertarget{classmain_1_1request_1_1_request_class_acd5e0cd30cef134fe1d5e23216ff99a5}\label{classmain_1_1request_1_1_request_class_acd5e0cd30cef134fe1d5e23216ff99a5}} 
+\index{main.request.RequestClass@{main.request.RequestClass}!getHeaderCount@{getHeaderCount}}
+\index{getHeaderCount@{getHeaderCount}!main.request.RequestClass@{main.request.RequestClass}}
+\doxysubsubsection{\texorpdfstring{getHeaderCount()}{getHeaderCount()}}
+{\footnotesize\ttfamily int main.\+request.\+Request\+Class.\+get\+Header\+Count (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\begin{DoxyReturn}{Returns}
+Returns the number of header or 0, if no header where found. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{interfaceinterfaces_1_1_request_a20364768113aca17dee832d465c166cb}{interfaces.\+Request}}.
+
+\mbox{\Hypertarget{classmain_1_1request_1_1_request_class_aedb2a0e5999cdb780329e3ca0b0990fa}\label{classmain_1_1request_1_1_request_class_aedb2a0e5999cdb780329e3ca0b0990fa}} 
+\index{main.request.RequestClass@{main.request.RequestClass}!getHeaders@{getHeaders}}
+\index{getHeaders@{getHeaders}!main.request.RequestClass@{main.request.RequestClass}}
+\doxysubsubsection{\texorpdfstring{getHeaders()}{getHeaders()}}
+{\footnotesize\ttfamily Map$<$String, String$>$ main.\+request.\+Request\+Class.\+get\+Headers (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\begin{DoxyReturn}{Returns}
+Returns the request header. Never returns null. All keys must be lower case. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{interfaceinterfaces_1_1_request_a60d403ccf05f4d700e2bb35a58325d44}{interfaces.\+Request}}.
+
+\mbox{\Hypertarget{classmain_1_1request_1_1_request_class_a08e154a76e9c3cf785cc65463a4dfb45}\label{classmain_1_1request_1_1_request_class_a08e154a76e9c3cf785cc65463a4dfb45}} 
+\index{main.request.RequestClass@{main.request.RequestClass}!getMethod@{getMethod}}
+\index{getMethod@{getMethod}!main.request.RequestClass@{main.request.RequestClass}}
+\doxysubsubsection{\texorpdfstring{getMethod()}{getMethod()}}
+{\footnotesize\ttfamily String main.\+request.\+Request\+Class.\+get\+Method (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\begin{DoxyReturn}{Returns}
+Returns the request method in U\+P\+P\+E\+R\+C\+A\+SE. get -\/$>$ G\+ET 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{interfaceinterfaces_1_1_request_aaf20bba3ebb3a98eec093cad56fc0750}{interfaces.\+Request}}.
+
+\mbox{\Hypertarget{classmain_1_1request_1_1_request_class_a62588719ad80ab86abde01b07f903171}\label{classmain_1_1request_1_1_request_class_a62588719ad80ab86abde01b07f903171}} 
+\index{main.request.RequestClass@{main.request.RequestClass}!getUrl@{getUrl}}
+\index{getUrl@{getUrl}!main.request.RequestClass@{main.request.RequestClass}}
+\doxysubsubsection{\texorpdfstring{getUrl()}{getUrl()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classmain_1_1url_1_1_url_class}{Url\+Class}} main.\+request.\+Request\+Class.\+get\+Url (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\begin{DoxyReturn}{Returns}
+Returns a U\+RL object of the request. Never returns null. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{interfaceinterfaces_1_1_request_ab29e56b7158d4194aaef5f62418212d2}{interfaces.\+Request}}.
+
+\mbox{\Hypertarget{classmain_1_1request_1_1_request_class_aead375d9fad9578cd7796443a6fc347f}\label{classmain_1_1request_1_1_request_class_aead375d9fad9578cd7796443a6fc347f}} 
+\index{main.request.RequestClass@{main.request.RequestClass}!getUserAgent@{getUserAgent}}
+\index{getUserAgent@{getUserAgent}!main.request.RequestClass@{main.request.RequestClass}}
+\doxysubsubsection{\texorpdfstring{getUserAgent()}{getUserAgent()}}
+{\footnotesize\ttfamily String main.\+request.\+Request\+Class.\+get\+User\+Agent (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\begin{DoxyReturn}{Returns}
+Returns the user agent from the request header 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{interfaceinterfaces_1_1_request_a4b1f384707bac627751868ae1f8c11e7}{interfaces.\+Request}}.
+
+\mbox{\Hypertarget{classmain_1_1request_1_1_request_class_ad502c648a9407326ad8e6fa5ee544e94}\label{classmain_1_1request_1_1_request_class_ad502c648a9407326ad8e6fa5ee544e94}} 
+\index{main.request.RequestClass@{main.request.RequestClass}!isValid@{isValid}}
+\index{isValid@{isValid}!main.request.RequestClass@{main.request.RequestClass}}
+\doxysubsubsection{\texorpdfstring{isValid()}{isValid()}}
+{\footnotesize\ttfamily boolean main.\+request.\+Request\+Class.\+is\+Valid (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\begin{DoxyReturn}{Returns}
+Returns true if the request is valid. A request is valid, if method and url could be parsed. A header is not necessary. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{interfaceinterfaces_1_1_request_a760efc069f6a6418b10d227e8f53f3cc}{interfaces.\+Request}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/main/request/Request\+Class.\+java\end{DoxyCompactItemize}

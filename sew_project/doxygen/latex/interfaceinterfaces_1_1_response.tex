@@ -1,0 +1,254 @@
+\hypertarget{interfaceinterfaces_1_1_response}{}\doxysection{interfaces.\+Response Interface Reference}
+\label{interfaceinterfaces_1_1_response}\index{interfaces.Response@{interfaces.Response}}
+Inheritance diagram for interfaces.\+Response\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{interfaceinterfaces_1_1_response}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+Map$<$ String, String $>$ \mbox{\hyperlink{interfaceinterfaces_1_1_response_af17f3aff4ee2694f7b5503e8cac150e7}{get\+Headers}} ()
+\item 
+int \mbox{\hyperlink{interfaceinterfaces_1_1_response_a9eb80e7785e38edf11cb626f5d432608}{get\+Content\+Length}} ()
+\item 
+String \mbox{\hyperlink{interfaceinterfaces_1_1_response_a3595021e0c1aef2d6a30f5715541344a}{get\+Content\+Type}} ()
+\item 
+void \mbox{\hyperlink{interfaceinterfaces_1_1_response_a742def05edd783428fdd41826b89a876}{set\+Content\+Type}} (String content\+Type)
+\item 
+int \mbox{\hyperlink{interfaceinterfaces_1_1_response_ab5fd00d688a99158b17f7ea66fc15d36}{get\+Status\+Code}} ()
+\item 
+void \mbox{\hyperlink{interfaceinterfaces_1_1_response_a96f8fefa067d900ccf0f5c4891b4601e}{set\+Status\+Code}} (int status)
+\item 
+String \mbox{\hyperlink{interfaceinterfaces_1_1_response_a40a7c0cd2d5e324ab7dad411f95585c0}{get\+Status}} ()
+\item 
+void \mbox{\hyperlink{interfaceinterfaces_1_1_response_a0ea18602c0d6c849dc6dbe876fb2afc4}{add\+Header}} (String header, String value)
+\item 
+String \mbox{\hyperlink{interfaceinterfaces_1_1_response_af318efc31d16526b8552b114076de990}{get\+Server\+Header}} ()
+\item 
+void \mbox{\hyperlink{interfaceinterfaces_1_1_response_a55ef1eed60a514ca8eef1bc78609bb91}{set\+Server\+Header}} (String server)
+\item 
+void \mbox{\hyperlink{interfaceinterfaces_1_1_response_a5b105c0789539458455fabf1d721535e}{set\+Content}} (String content)
+\item 
+void \mbox{\hyperlink{interfaceinterfaces_1_1_response_a7aaa0ed03bd4e0aa193eff1f9b18ef62}{set\+Content}} (byte\mbox{[}$\,$\mbox{]} content)
+\item 
+void \mbox{\hyperlink{interfaceinterfaces_1_1_response_a8a808ad7f0875bd479c185f33f0eb07c}{set\+Content}} (Input\+Stream stream)
+\item 
+void \mbox{\hyperlink{interfaceinterfaces_1_1_response_aa4cfd3a3971672f5f56f0f101e9a55df}{send}} (Output\+Stream network)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{interfaceinterfaces_1_1_response_a0ea18602c0d6c849dc6dbe876fb2afc4}\label{interfaceinterfaces_1_1_response_a0ea18602c0d6c849dc6dbe876fb2afc4}} 
+\index{interfaces.Response@{interfaces.Response}!addHeader@{addHeader}}
+\index{addHeader@{addHeader}!interfaces.Response@{interfaces.Response}}
+\doxysubsubsection{\texorpdfstring{addHeader()}{addHeader()}}
+{\footnotesize\ttfamily void interfaces.\+Response.\+add\+Header (\begin{DoxyParamCaption}\item[{String}]{header,  }\item[{String}]{value }\end{DoxyParamCaption})}
+
+Adds or replaces a response header in the headers map
+
+
+\begin{DoxyParams}{Parameters}
+{\em header} & \\
+\hline
+{\em value} & \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{classmain_1_1response_1_1_response_class_a1897a0e059d3696ea566d1eb7e36cb25}{main.\+response.\+Response\+Class}}.
+
+\mbox{\Hypertarget{interfaceinterfaces_1_1_response_a9eb80e7785e38edf11cb626f5d432608}\label{interfaceinterfaces_1_1_response_a9eb80e7785e38edf11cb626f5d432608}} 
+\index{interfaces.Response@{interfaces.Response}!getContentLength@{getContentLength}}
+\index{getContentLength@{getContentLength}!interfaces.Response@{interfaces.Response}}
+\doxysubsubsection{\texorpdfstring{getContentLength()}{getContentLength()}}
+{\footnotesize\ttfamily int interfaces.\+Response.\+get\+Content\+Length (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\begin{DoxyReturn}{Returns}
+Returns the content length or 0 if no content is set yet. 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classmain_1_1response_1_1_response_class_ab01e44f75757ce634eaa0f1de1463e83}{main.\+response.\+Response\+Class}}.
+
+\mbox{\Hypertarget{interfaceinterfaces_1_1_response_a3595021e0c1aef2d6a30f5715541344a}\label{interfaceinterfaces_1_1_response_a3595021e0c1aef2d6a30f5715541344a}} 
+\index{interfaces.Response@{interfaces.Response}!getContentType@{getContentType}}
+\index{getContentType@{getContentType}!interfaces.Response@{interfaces.Response}}
+\doxysubsubsection{\texorpdfstring{getContentType()}{getContentType()}}
+{\footnotesize\ttfamily String interfaces.\+Response.\+get\+Content\+Type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\begin{DoxyReturn}{Returns}
+Gets the content type of the response. 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classmain_1_1response_1_1_response_class_ab60532cd95cedfb0a25f441ec7ff4eae}{main.\+response.\+Response\+Class}}.
+
+\mbox{\Hypertarget{interfaceinterfaces_1_1_response_af17f3aff4ee2694f7b5503e8cac150e7}\label{interfaceinterfaces_1_1_response_af17f3aff4ee2694f7b5503e8cac150e7}} 
+\index{interfaces.Response@{interfaces.Response}!getHeaders@{getHeaders}}
+\index{getHeaders@{getHeaders}!interfaces.Response@{interfaces.Response}}
+\doxysubsubsection{\texorpdfstring{getHeaders()}{getHeaders()}}
+{\footnotesize\ttfamily Map$<$String, String$>$ interfaces.\+Response.\+get\+Headers (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\begin{DoxyReturn}{Returns}
+Returns a writable map of the response headers. Never returns null. 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classmain_1_1response_1_1_response_class_ada8251d02d0b75f221315b626a567d01}{main.\+response.\+Response\+Class}}.
+
+\mbox{\Hypertarget{interfaceinterfaces_1_1_response_af318efc31d16526b8552b114076de990}\label{interfaceinterfaces_1_1_response_af318efc31d16526b8552b114076de990}} 
+\index{interfaces.Response@{interfaces.Response}!getServerHeader@{getServerHeader}}
+\index{getServerHeader@{getServerHeader}!interfaces.Response@{interfaces.Response}}
+\doxysubsubsection{\texorpdfstring{getServerHeader()}{getServerHeader()}}
+{\footnotesize\ttfamily String interfaces.\+Response.\+get\+Server\+Header (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\begin{DoxyReturn}{Returns}
+Returns the Server response header. Defaults to \char`\"{}\+B\+I\+F-\/\+S\+W\+E1-\/\+Server\char`\"{}. 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classmain_1_1response_1_1_response_class_a84627079f76c1ed4a329371d632800e8}{main.\+response.\+Response\+Class}}.
+
+\mbox{\Hypertarget{interfaceinterfaces_1_1_response_a40a7c0cd2d5e324ab7dad411f95585c0}\label{interfaceinterfaces_1_1_response_a40a7c0cd2d5e324ab7dad411f95585c0}} 
+\index{interfaces.Response@{interfaces.Response}!getStatus@{getStatus}}
+\index{getStatus@{getStatus}!interfaces.Response@{interfaces.Response}}
+\doxysubsubsection{\texorpdfstring{getStatus()}{getStatus()}}
+{\footnotesize\ttfamily String interfaces.\+Response.\+get\+Status (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\begin{DoxyReturn}{Returns}
+Returns the status code as string. (200 OK) 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classmain_1_1response_1_1_response_class_a14ace423bb1ce84a546bd2b51005b888}{main.\+response.\+Response\+Class}}.
+
+\mbox{\Hypertarget{interfaceinterfaces_1_1_response_ab5fd00d688a99158b17f7ea66fc15d36}\label{interfaceinterfaces_1_1_response_ab5fd00d688a99158b17f7ea66fc15d36}} 
+\index{interfaces.Response@{interfaces.Response}!getStatusCode@{getStatusCode}}
+\index{getStatusCode@{getStatusCode}!interfaces.Response@{interfaces.Response}}
+\doxysubsubsection{\texorpdfstring{getStatusCode()}{getStatusCode()}}
+{\footnotesize\ttfamily int interfaces.\+Response.\+get\+Status\+Code (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\begin{DoxyReturn}{Returns}
+Gets the current status code. An Exceptions is thrown, if no status code was set. 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classmain_1_1response_1_1_response_class_af4a99c2b8768eb3ea4ea94f2cf1eef77}{main.\+response.\+Response\+Class}}.
+
+\mbox{\Hypertarget{interfaceinterfaces_1_1_response_aa4cfd3a3971672f5f56f0f101e9a55df}\label{interfaceinterfaces_1_1_response_aa4cfd3a3971672f5f56f0f101e9a55df}} 
+\index{interfaces.Response@{interfaces.Response}!send@{send}}
+\index{send@{send}!interfaces.Response@{interfaces.Response}}
+\doxysubsubsection{\texorpdfstring{send()}{send()}}
+{\footnotesize\ttfamily void interfaces.\+Response.\+send (\begin{DoxyParamCaption}\item[{Output\+Stream}]{network }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parameters}
+{\em network} & Sends the response to the network stream. \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{classmain_1_1response_1_1_response_class_a775c38fed8f8bca4da6ec93f588f165d}{main.\+response.\+Response\+Class}}.
+
+\mbox{\Hypertarget{interfaceinterfaces_1_1_response_a7aaa0ed03bd4e0aa193eff1f9b18ef62}\label{interfaceinterfaces_1_1_response_a7aaa0ed03bd4e0aa193eff1f9b18ef62}} 
+\index{interfaces.Response@{interfaces.Response}!setContent@{setContent}}
+\index{setContent@{setContent}!interfaces.Response@{interfaces.Response}}
+\doxysubsubsection{\texorpdfstring{setContent()}{setContent()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily void interfaces.\+Response.\+set\+Content (\begin{DoxyParamCaption}\item[{byte\mbox{[}$\,$\mbox{]}}]{content }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parameters}
+{\em content} & Sets a byte\mbox{[}\mbox{]} as content. \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{classmain_1_1response_1_1_response_class_acf6bac30551fe87886cd608a413e3a2e}{main.\+response.\+Response\+Class}}.
+
+\mbox{\Hypertarget{interfaceinterfaces_1_1_response_a8a808ad7f0875bd479c185f33f0eb07c}\label{interfaceinterfaces_1_1_response_a8a808ad7f0875bd479c185f33f0eb07c}} 
+\index{interfaces.Response@{interfaces.Response}!setContent@{setContent}}
+\index{setContent@{setContent}!interfaces.Response@{interfaces.Response}}
+\doxysubsubsection{\texorpdfstring{setContent()}{setContent()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily void interfaces.\+Response.\+set\+Content (\begin{DoxyParamCaption}\item[{Input\+Stream}]{stream }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parameters}
+{\em stream} & Sets the stream as content. \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{classmain_1_1response_1_1_response_class_ab56e3c1d640fc3508b603706ee1befb4}{main.\+response.\+Response\+Class}}.
+
+\mbox{\Hypertarget{interfaceinterfaces_1_1_response_a5b105c0789539458455fabf1d721535e}\label{interfaceinterfaces_1_1_response_a5b105c0789539458455fabf1d721535e}} 
+\index{interfaces.Response@{interfaces.Response}!setContent@{setContent}}
+\index{setContent@{setContent}!interfaces.Response@{interfaces.Response}}
+\doxysubsubsection{\texorpdfstring{setContent()}{setContent()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily void interfaces.\+Response.\+set\+Content (\begin{DoxyParamCaption}\item[{String}]{content }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parameters}
+{\em content} & Sets a string content. The content will be encoded in U\+T\+F-\/8. \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{classmain_1_1response_1_1_response_class_adc98968feb8ba75e07f9ac88ea38ac07}{main.\+response.\+Response\+Class}}.
+
+\mbox{\Hypertarget{interfaceinterfaces_1_1_response_a742def05edd783428fdd41826b89a876}\label{interfaceinterfaces_1_1_response_a742def05edd783428fdd41826b89a876}} 
+\index{interfaces.Response@{interfaces.Response}!setContentType@{setContentType}}
+\index{setContentType@{setContentType}!interfaces.Response@{interfaces.Response}}
+\doxysubsubsection{\texorpdfstring{setContentType()}{setContentType()}}
+{\footnotesize\ttfamily void interfaces.\+Response.\+set\+Content\+Type (\begin{DoxyParamCaption}\item[{String}]{content\+Type }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parameters}
+{\em content\+Type} & Sets the content type of the response. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Illegal\+State\+Exception} & A specialized implementation may throw a Invalid\+Operation\+Exception when the content type is set by the implementation. \\
+\hline
+\end{DoxyExceptions}
+
+
+Implemented in \mbox{\hyperlink{classmain_1_1response_1_1_response_class_a30a090e78163ba5ad160f4e084aaf01a}{main.\+response.\+Response\+Class}}.
+
+\mbox{\Hypertarget{interfaceinterfaces_1_1_response_a55ef1eed60a514ca8eef1bc78609bb91}\label{interfaceinterfaces_1_1_response_a55ef1eed60a514ca8eef1bc78609bb91}} 
+\index{interfaces.Response@{interfaces.Response}!setServerHeader@{setServerHeader}}
+\index{setServerHeader@{setServerHeader}!interfaces.Response@{interfaces.Response}}
+\doxysubsubsection{\texorpdfstring{setServerHeader()}{setServerHeader()}}
+{\footnotesize\ttfamily void interfaces.\+Response.\+set\+Server\+Header (\begin{DoxyParamCaption}\item[{String}]{server }\end{DoxyParamCaption})}
+
+Sets the Server response header. 
+\begin{DoxyParams}{Parameters}
+{\em server} & \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{classmain_1_1response_1_1_response_class_a796af60b1a6ed4b7b78048357eca18cb}{main.\+response.\+Response\+Class}}.
+
+\mbox{\Hypertarget{interfaceinterfaces_1_1_response_a96f8fefa067d900ccf0f5c4891b4601e}\label{interfaceinterfaces_1_1_response_a96f8fefa067d900ccf0f5c4891b4601e}} 
+\index{interfaces.Response@{interfaces.Response}!setStatusCode@{setStatusCode}}
+\index{setStatusCode@{setStatusCode}!interfaces.Response@{interfaces.Response}}
+\doxysubsubsection{\texorpdfstring{setStatusCode()}{setStatusCode()}}
+{\footnotesize\ttfamily void interfaces.\+Response.\+set\+Status\+Code (\begin{DoxyParamCaption}\item[{int}]{status }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parameters}
+{\em status} & Sets the current status code. \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{classmain_1_1response_1_1_response_class_a07feacd589e8fc8c305486a95e116175}{main.\+response.\+Response\+Class}}.
+
+
+
+The documentation for this interface was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/interfaces/Response.\+java\end{DoxyCompactItemize}

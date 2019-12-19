@@ -1,0 +1,63 @@
+\hypertarget{classmain_1_1plugin_manager_1_1plugins_1_1_to_lower_plugin}{}\doxysection{main.\+plugin\+Manager.\+plugins.\+To\+Lower\+Plugin Class Reference}
+\label{classmain_1_1plugin_manager_1_1plugins_1_1_to_lower_plugin}\index{main.pluginManager.plugins.ToLowerPlugin@{main.pluginManager.plugins.ToLowerPlugin}}
+Inheritance diagram for main.\+plugin\+Manager.\+plugins.\+To\+Lower\+Plugin\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classmain_1_1plugin_manager_1_1plugins_1_1_to_lower_plugin}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+float \mbox{\hyperlink{classmain_1_1plugin_manager_1_1plugins_1_1_to_lower_plugin_a2e40c3d7c7d0dc8121efb349b388759e}{can\+Handle}} (\mbox{\hyperlink{classmain_1_1request_1_1_request_class}{Request\+Class}} req)  throws Exception 
+\item 
+\mbox{\hyperlink{classmain_1_1response_1_1_response_class}{Response\+Class}} \mbox{\hyperlink{classmain_1_1plugin_manager_1_1plugins_1_1_to_lower_plugin_af18f7e8f0fcc78230d5ae3973259fc58}{handle}} (\mbox{\hyperlink{classmain_1_1request_1_1_request_class}{Request\+Class}} req)  throws I\+O\+Exception, Parser\+Configuration\+Exception, S\+A\+X\+Exception, S\+Q\+L\+Exception 
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classmain_1_1plugin_manager_1_1plugins_1_1_to_lower_plugin_a2e40c3d7c7d0dc8121efb349b388759e}\label{classmain_1_1plugin_manager_1_1plugins_1_1_to_lower_plugin_a2e40c3d7c7d0dc8121efb349b388759e}} 
+\index{main.pluginManager.plugins.ToLowerPlugin@{main.pluginManager.plugins.ToLowerPlugin}!canHandle@{canHandle}}
+\index{canHandle@{canHandle}!main.pluginManager.plugins.ToLowerPlugin@{main.pluginManager.plugins.ToLowerPlugin}}
+\doxysubsubsection{\texorpdfstring{canHandle()}{canHandle()}}
+{\footnotesize\ttfamily float main.\+plugin\+Manager.\+plugins.\+To\+Lower\+Plugin.\+can\+Handle (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classmain_1_1request_1_1_request_class}{Request\+Class}}}]{req }\end{DoxyParamCaption}) throws Exception}
+
+Returns a score between 0 and 1 to indicate that the plugin is willing to handle the request. The plugin with the highest score will execute the request.
+
+
+\begin{DoxyParams}{Parameters}
+{\em req} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A score between 0 and 1 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{interfaceinterfaces_1_1_plugin_a2f124bf1dea12e721e9408bd32da54aa}{interfaces.\+Plugin}}.
+
+\mbox{\Hypertarget{classmain_1_1plugin_manager_1_1plugins_1_1_to_lower_plugin_af18f7e8f0fcc78230d5ae3973259fc58}\label{classmain_1_1plugin_manager_1_1plugins_1_1_to_lower_plugin_af18f7e8f0fcc78230d5ae3973259fc58}} 
+\index{main.pluginManager.plugins.ToLowerPlugin@{main.pluginManager.plugins.ToLowerPlugin}!handle@{handle}}
+\index{handle@{handle}!main.pluginManager.plugins.ToLowerPlugin@{main.pluginManager.plugins.ToLowerPlugin}}
+\doxysubsubsection{\texorpdfstring{handle()}{handle()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classmain_1_1response_1_1_response_class}{Response\+Class}} main.\+plugin\+Manager.\+plugins.\+To\+Lower\+Plugin.\+handle (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classmain_1_1request_1_1_request_class}{Request\+Class}}}]{req }\end{DoxyParamCaption}) throws I\+O\+Exception, Parser\+Configuration\+Exception, S\+A\+X\+Exception, S\+Q\+L\+Exception}
+
+Called by the server when the plugin should handle the request.
+
+
+\begin{DoxyParams}{Parameters}
+{\em req} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A new response object. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{interfaceinterfaces_1_1_plugin_ae7834a61c65388ec3d74d203fa5051d4}{interfaces.\+Plugin}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/main/plugin\+Manager/plugins/To\+Lower\+Plugin.\+java\end{DoxyCompactItemize}
